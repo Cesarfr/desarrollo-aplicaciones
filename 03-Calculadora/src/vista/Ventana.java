@@ -27,7 +27,7 @@ public class Ventana extends JFrame{
 	private JButton btnSuma = new JButton("+");
 	private JButton btnResta = new JButton("-");
 	private JButton btnMultiplicacion = new JButton("x");
-	private JButton btnDivision = new JButton("/");
+	private JButton btnDivision = new JButton("\u00F7");
 	
 	private Container c = getContentPane();
 	
@@ -76,17 +76,17 @@ public class Ventana extends JFrame{
 	}
 	/**
 	 * 
-	 * @return Retorna el numero 1 en formato int
+	 * @return Retorna el numero 1 en formato double
 	 */
-	public int getN1(){
-		return Integer.parseInt(txtN1.getText());
+	public double getN1(){
+		return Double.parseDouble(txtN1.getText());
 	}
 	/**
 	 * 
 	 * @return Retorna el numero 2 en formato int
 	 */
-	public int getN2(){
-		return Integer.parseInt(txtN2.getText());
+	public double getN2(){
+		return Double.parseDouble(txtN2.getText());
 	}
 	/**
 	 * Establece el resultado en el label correspondiente
@@ -97,28 +97,28 @@ public class Ventana extends JFrame{
 	}
 	
 	/**
-	 * ActionListener para el evento de la opetración suma
+	 * ActionListener para el evento de la operación suma
 	 * @param al
 	 */
 	public void onClickSuma(ActionListener al){
 		btnSuma.addActionListener(al);
 	}
 	/**
-	 * ActionListener para el evento de la opetración resta
+	 * ActionListener para el evento de la operación resta
 	 * @param al
 	 */
 	public void onClickResta(ActionListener al){
 		btnResta.addActionListener(al);
 	}
 	/**
-	 * ActionListener para el evento de la opetración multiplicación
+	 * ActionListener para el evento de la operación multiplicación
 	 * @param al
 	 */
 	public void onClickMultiplicacion(ActionListener al){
 		btnMultiplicacion.addActionListener(al);
 	}
 	/**
-	 * ActionListener para el evento de la opetración división
+	 * ActionListener para el evento de la operación división
 	 * @param al
 	 */
 	public void onClickDivision(ActionListener al){
@@ -126,7 +126,7 @@ public class Ventana extends JFrame{
 	}
 	
 	/**
-	 * Método para mostar una alerta de error
+	 * Método para mostrar una alerta de error
 	 * @param error
 	 */
 	public void mostrarError(String error){

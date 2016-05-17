@@ -1,67 +1,124 @@
 package modelo;
 
+/**
+ * 
+ * @author cesar
+ *
+ */
 public class Operaciones {
-	private int n1 = 0;
-	private int n2 = 0;
-	private int resultado = 0;
-	private double resultadoDos = 0.0;
+	private double n1 = 0.0;
+	private double n2 = 0.0;
+	private double resultado = 0.0;
 	
+	/**
+	 * Constructor por defecto
+	 */
 	public Operaciones() {}
-
-	public Operaciones(int n1, int n2) {
+	
+	/**
+	 * Constructor de los numeros
+	 * @param n1 Numero 1 para las operaciones
+	 * @param n2 Numero 2 para las operaciones
+	 */
+	public Operaciones(double n1, double n2) {
 		this.n1 = n1;
 		this.n2 = n2;
 	}
-
-	public int getN1() {
+	
+	/**
+	 * 
+	 * @return Retorna el numero uno en formato double
+	 */
+	public double getN1() {
 		return n1;
 	}
-
-	public void setN1(int n1) {
+	
+	/**
+	 * Establece el valor del numero uno
+	 * @param n1 Numero uno para las operaciones en formato double
+	 */
+	public void setN1(double n1) {
 		this.n1 = n1;
 	}
-
-	public int getN2() {
+	
+	/**
+	 * 
+	 * @return Retorna el numero dos en formato double
+	 */
+	public double getN2() {
 		return n2;
 	}
-
-	public double getResultadoDos() {
-		return resultadoDos;
-	}
-
-	public void setResultadoDos(double resultadodos) {
-		this.resultadoDos = resultadodos;
-	}
-
-	public void setN2(int n2) {
+	
+	/**
+	 * Establece el valor del numero dos
+	 * @param n2 Numero dos para las operaciones en formato double
+	 */
+	public void setN2(double n2) {
 		this.n2 = n2;
 	}
-
-	public int getResultado() {
+	
+	/**
+	 * 
+	 * @return Retorna el resultado de la operacion
+	 */
+	public double getResultado() {
 		return resultado;
 	}
-
-	public void setResultado(int resultado) {
+	
+	/**
+	 * Establece el resultado de la operacion
+	 * @param resultado
+	 */
+	public void setResultado(double resultado) {
 		this.resultado = resultado;
 	}
 	
-	public int suma(int n1, int n2){
+	/**
+	 * Metodo para calcular la suma de dos numeros
+	 * @param n1 Numero uno en formato double
+	 * @param n2 Numero dos en formato double
+	 * @return Retorna el resultado de la operacion en formato double
+	 */
+	public double suma(double n1, double n2){
 		return resultado = n1 + n2;
 	}
 	
-	public int resta(int n1, int n2){
+	/**
+	 * Metodo para calcular la resta de dos numeros
+	 * @param n1 Numero uno en formato double
+	 * @param n2 Numero dos en formato double
+	 * @return Retorna el resultado de la operacion en formato double
+	 */
+	public double resta(double n1, double n2){
 		return resultado = n1 - n2;
 	}
 	
-	public int multiplicacion(int n1, int n2){
+	/**
+	 * Metodo para calcular la multiplicacion de dos numeros
+	 * @param n1 Numero uno en formato double
+	 * @param n2 Numero dos en formato double
+	 * @return Retorna el resultado de la operacion en formato double
+	 */
+	public double multiplicacion(double n1, double n2){
 		return resultado = n1 * n2;
 	}
 	
-	public int division(int n1, int n2){
+	/**
+	 * Metodo para calcular la division de dos numeros
+	 * @param n1 Numero uno en formato double
+	 * @param n2 Numero dos en formato double
+	 * @return Retorna el resultado de la operacion en formato double
+	 */
+	public double division(double n1, double n2){
 		return resultado = n1 / n2;
 	}
 	
-	public double divisionDouble(int n1, int n2){
-		return resultadoDos = (double) n1 / (double) n2;
+	/**
+	 * Metodo para detectar numeros dobles y enteros
+	 * @param numero Numero a detectar en formato double
+	 * @return Retorna una cadena de texto con el numero
+	 */
+	public String detectaDoble(double numero){
+		return numero % 1.0 != 0 ? String.format("%s", numero) : String.format("%.0f", numero);
 	}
 }

@@ -57,7 +57,7 @@ public class ACirculo extends JFrame{
 	}
 	
 	/**
-	 * 
+	 * Retorna el valor del radio en formato double
 	 * @return Retorna el valor del radio en formato double
 	 */
 	public double getRadio() {

@@ -25,7 +25,7 @@ public class Cuadrado {
 	}
 	
 	/**
-	 * 
+	 * Retorna el valor del resultado de la operacion
 	 * @return Retorna el valor del resultado de la operacion
 	 */
 	public double getResultado() {
@@ -41,7 +41,7 @@ public class Cuadrado {
 	}
 	
 	/**
-	 * 
+	 * Retorna el valor del lado en formato double
 	 * @return Retorna el valor del lado en formato double
 	 */
 	public double getLado() {

@@ -62,7 +62,7 @@ public class ARectangulo extends JFrame {
 	}
 	
 	/**
-	 * 
+	 * Retorna el valor de la base en formato double
 	 * @return Retorna el valor de la base en formato double
 	 */
 	public double getBase(){
@@ -70,7 +70,7 @@ public class ARectangulo extends JFrame {
 	}
 	
 	/**
-	 * 
+	 * Retorna el valor de la altura en formato double
 	 * @return Retorna el valor de la altura en formato double
 	 */
 	public double getAltura() {

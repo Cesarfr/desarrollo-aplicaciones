@@ -57,6 +57,7 @@ public class ACuadrado extends JFrame {
 	
 	/**
 	 * 
+	 * Retorna el valor del lado en formato double
 	 * @return Retorna el valor del lado en formato double
 	 */
 	public double getLado(){

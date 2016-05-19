@@ -31,7 +31,7 @@ public class Triangulo {
 	}
 	
 	/**
-	 * 
+	 * Retorna el valor de la base del triangulo en formato double
 	 * @return Retorna el valor de la base del triangulo en formato double
 	 */
 	public double getBase() {
@@ -47,7 +47,7 @@ public class Triangulo {
 	}
 	
 	/**
-	 * 
+	 * Retorna el valor de la altura en formato double
 	 * @return Retorna el valor de la altura en formato double
 	 */
 	public double getAltura() {
@@ -55,8 +55,8 @@ public class Triangulo {
 	}
 	
 	/**
-	 * 
-	 * @return Retrona el valor del lado 1 del triangulo
+	 * Retorna el valor del lado 1 del triangulo
+	 * @return Retorna el valor del lado 1 del triangulo
 	 */
 	public double getLado1() {
 		return lado1;
@@ -71,7 +71,7 @@ public class Triangulo {
 	}
 	
 	/**
-	 * 
+	 * Retorna el valor del lado 2 del triangulo
 	 * @return Retorna el valor del lado 2 del triangulo
 	 */
 	public double getLado2() {
@@ -87,7 +87,7 @@ public class Triangulo {
 	}
 	
 	/**
-	 * 
+	 * Retorna el valor del lado 3 del triangulo
 	 * @return Retorna el valor del lado 3 del triangulo
 	 */
 	public double getLado3() {
@@ -111,7 +111,7 @@ public class Triangulo {
 	}
 	
 	/**
-	 * 
+	 * Retorna el valor del resultado en formato double
 	 * @return Retorna el valor del resultado en formato double
 	 */
 	public double getResultado() {

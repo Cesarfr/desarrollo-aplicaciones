@@ -28,7 +28,7 @@ public class Circulo {
 	}
 	
 	/**
-	 * 
+	 * Retorna el Radio en formato double
 	 * @return Retorna el Radio en formato double
 	 */
 	public double getRadio() {
@@ -44,7 +44,7 @@ public class Circulo {
 	}
 	
 	/**
-	 * 
+	 * Retorna el valor del diametro en formato double
 	 * @return Retorna el valor del diametro en formato double
 	 */
 	public double getDiametro() {
@@ -60,7 +60,7 @@ public class Circulo {
 	}
 
 	/**
-	 * 
+	 * Retorna el resultado en formato double
 	 * @return Retorna el resultado en formato double
 	 */
 	public double getResultado() {

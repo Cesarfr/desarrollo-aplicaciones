@@ -8,6 +8,12 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
+/**
+ * Vista del menu principal
+ * @author cesar
+ * @version 1.0
+ *
+ */
 public class Menu extends JFrame{
 	
 	private JButton btnArea = new JButton("Areas");
@@ -15,7 +21,10 @@ public class Menu extends JFrame{
 	private JLabel lbMensaje = new JLabel("Bienvenido, escoge una opción:");
 	
 	private Container c = getContentPane();
-
+	
+	/**
+	 * Constructor de la clase Menu
+	 */
 	public Menu() {
 		super.setSize(320, 320);
 		super.setTitle("Menú");
@@ -25,6 +34,9 @@ public class Menu extends JFrame{
 		cargarControles();
 	}
 	
+	/**
+	 * Metodo para cargar los controles de la vista
+	 */
 	private void cargarControles(){
 		c.setLayout(null);
 		
@@ -37,22 +49,42 @@ public class Menu extends JFrame{
 		c.add(btnPerimetro);
 	}
 	
+	/**
+	 * ActionListener para el boton área
+	 * @param al Objeto de tipo ActionListener
+	 */
 	public void onClickBtnArea(ActionListener al){
 		btnArea.addActionListener(al);
 	}
 	
+	/**
+	 * ActionListener para el boton perímetro
+	 * @param al Objeto de tipo ActionListener
+	 */
 	public void onClickBtnPerimetro(ActionListener al){
 		btnPerimetro.addActionListener(al);
 	}
 	
+	/**
+	 * 
+	 * @return Acceso al boton área
+	 */
 	public JButton getBtnArea() {
 		return btnArea;
 	}
-
+	
+	/**
+	 * 
+	 * @return Acceso al boton perímetro
+	 */
 	public JButton getBtnPerimetro() {
 		return btnPerimetro;
 	}
 	
+	/**
+	 * Metodo para mostrar una alerta de error
+	 * @param error Error en formato String
+	 */
 	public void mostrarError(String error){
 		JOptionPane.showMessageDialog(this, error, "Error!", JOptionPane.ERROR_MESSAGE);
 	}

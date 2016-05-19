@@ -10,6 +10,12 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
+/**
+ * Vista para calcular el perímetro del rectángulo
+ * @author cesar
+ * @version 1.0
+ *
+ */
 public class PRectangulo extends JFrame {
 	
 	private JLabel lbBase = new JLabel("Medida de la base");
@@ -22,6 +28,9 @@ public class PRectangulo extends JFrame {
 	private JButton btnCalcular = new JButton("Calcular perímetro");
 	private Container c = getContentPane();
 	
+	/**
+	 * Constructor de la clase PRectangulo para inicializar el Frame
+	 */
 	public PRectangulo() {
 		super.setTitle("Perímetro del rectangulo");
 		super.setSize(320, 480);
@@ -30,7 +39,10 @@ public class PRectangulo extends JFrame {
 		
 		cargarControles();
 	}
-
+	
+	/**
+	 * Metodo para cargar los controles a la vista PRectangulo
+	 */
 	private void cargarControles() {
 		c.setLayout(null);
 		
@@ -49,34 +61,65 @@ public class PRectangulo extends JFrame {
 		c.add(lbResultado);
 	}
 	
+	/**
+	 * Metodo para obtener el valor de la base del rectángulo
+	 * @return Base del rectángulo en formato double
+	 */
 	public double getBase(){
 		return Double.parseDouble(txtBase.getText());
 	}
 	
+	/**
+	 * Metodo para obtener el valor de la altura del rectángulo
+	 * @return ALtura del rectángulo en formato double
+	 */
 	public double getAltura() {
 		return Double.parseDouble(txtAltura.getText());
 	}
 	
+	/**
+	 * Metodo que muestra el resultado de la operación en la vista
+	 * @param resultado Resultado en formato String
+	 */
 	public void setResultado(String resultado) {
 		lbResultado.setText(resultado);
 	}
 	
+	/**
+	 * WindowListener para la vista PCirculo
+	 * @param wl Objeto de tipo WindowListener
+	 */
 	public void onClickBtnCalcular(ActionListener al) {
 		btnCalcular.addActionListener(al);
 	}
 	
+	/**
+	 * ActionListener para el boton calcular
+	 * @param al Objeto de tipo ActionListener
+	 */
 	public void eventoCerrar(WindowListener wl) {
 		this.addWindowListener(wl);
 	}
 
+	/**
+	 * WindowListener para la vista PRectangulo
+	 * @param wl Objeto de tipo WindowListener
+	 */
 	public JButton getBtnCalcular() {
 		return btnCalcular;
 	}
 	
+	/**
+	 * Metodo que muestra una alerta de error 
+	 * @param error Error en formato String
+	 */
 	public void mostrarError(String error) {
 		JOptionPane.showMessageDialog(this, error, "Error !", JOptionPane.ERROR_MESSAGE);
 	}
 	
+	/**
+	 * Método para limpiar las cajas de texto de la aplicación
+	 */
 	public void limpiarCajas() {
 		txtBase.setText(null);
 		txtAltura.setText(null);

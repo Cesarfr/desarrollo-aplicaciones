@@ -10,6 +10,12 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
+/**
+ * Vista para calcular el perímetro del triángulo
+ * @author cesar
+ * @version 1.0
+ *
+ */
 public class PTriangulo extends JFrame {
 	
 	private JLabel lbLado1 = new JLabel("Medida para el lado 1");
@@ -24,6 +30,9 @@ public class PTriangulo extends JFrame {
 	private JButton btnCalcular = new JButton("Calcular perímetro");
 	private Container c = getContentPane();
 	
+	/**
+	 * Constructor de la clase PTriangulo para inicializar el Frame
+	 */
 	public PTriangulo() {
 		super.setTitle("Perímetro del triangulo");
 		super.setSize(320, 480);
@@ -61,38 +70,73 @@ public class PTriangulo extends JFrame {
 		c.add(lbResultado);
 	}
 	
+	/**
+	 * Metodo para obtener el valor de lado 1 del triángulo
+	 * @return Lado 1 del triángulo en formato double
+	 */
 	public double getLado1(){
 		return Double.parseDouble(txtLado1.getText());
 	}
 	
+	/**
+	 * Metodo para obtener el valor de lado 2 del triángulo
+	 * @return Lado 2 del triángulo en formato double
+	 */
 	public double getLado2() {
 		return Double.parseDouble(txtLado2.getText());
 	}
 	
+	/**
+	 * Metodo para obtener el valor de lado 3 del triángulo
+	 * @return Lado 3 del triángulo en formato double
+	 */
 	public double getLado3() {
 		return Double.parseDouble(txtLado3.getText());
 	}
 	
+	/**
+	 * Metodo que muestra el resultado de la operación en la vista
+	 * @param resultado Resultado en formato String
+	 */
 	public void setResultado(String resultado) {
 		lbResultado.setText(resultado);
 	}
 	
+	/**
+	 * ActionListener para el boton calcular
+	 * @param al Objeto de tipo ActionListener
+	 */
 	public void onClickBtnCalcular(ActionListener al) {
 		btnCalcular.addActionListener(al);
 	}
 	
+	/**
+	 * WindowListener para la vista PTriangulo
+	 * @param wl Objeto de tipo WindowListener
+	 */
 	public void eventoCerrar(WindowListener wl) {
 		this.addWindowListener(wl);
 	}
-
+	
+	/**
+	 * Metodo para acceder al boton calcular
+	 * @return Acceso al boton calcular
+	 */
 	public JButton getBtnCalcular() {
 		return btnCalcular;
 	}
 	
+	/**
+	 * Metodo que muestra una alerta de error 
+	 * @param error Error en formato String
+	 */
 	public void mostrarError(String error) {
 		JOptionPane.showMessageDialog(this, error, "Error !", JOptionPane.ERROR_MESSAGE);
 	}
 	
+	/**
+	 * Método para limpiar las cajas de texto de la aplicación
+	 */
 	public void limpiarCajas() {
 		txtLado1.setText(null);
 		txtLado2.setText(null);

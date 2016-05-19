@@ -9,6 +9,12 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
+/**
+ * Vista de las opciones para calcular el perimetro
+ * @author cesar
+ * @version 1.0
+ *
+ */
 public class OpcionesPerimetro extends JFrame {
 	
 	private JLabel lbMensaje = new JLabel("Escoge una figura:");
@@ -18,7 +24,10 @@ public class OpcionesPerimetro extends JFrame {
 	private JButton btnTriangulo = new JButton("Triángulo");
 	
 	private Container c = getContentPane();
-
+	
+	/**
+	 * Constructor de la vista OpcionesPerimetro
+	 */
 	public OpcionesPerimetro() {
 		super.setTitle("Opciones Perímetro");
 		super.setSize(320, 480);
@@ -28,6 +37,9 @@ public class OpcionesPerimetro extends JFrame {
 		cargarControles();
 	}
 	
+	/**
+	 * 	Metodo para cargar los controles de la vista OpcionesPerimetro
+	 */
 	private void cargarControles() {
 		c.setLayout(null);
 
@@ -43,43 +55,83 @@ public class OpcionesPerimetro extends JFrame {
 		c.add(btnRectangulo);
 		c.add(btnTriangulo);
 	}
-
+	
+	/**
+	 * ActionListener del boton circulo
+	 * @param al Objeto de tipo ActionListener
+	 */
 	public void onClickCirculo(ActionListener al) {
 		btnCirculo.addActionListener(al);
 	}
-
+	
+	/**
+	 * ActionListener del boton cuadrado
+	 * @param al Objeto de tipo ActionListener
+	 */
 	public void onClickCuadrado(ActionListener al) {
 		btnCuadrado.addActionListener(al);
 	}
 	
+	/**
+	 * ActionListener del boton rectangulo
+	 * @param al Objeto de tipo ActionListener
+	 */
 	public void onClickRectangulo(ActionListener al) {
 		btnRectangulo.addActionListener(al);
 	}
 	
+	/**
+	 * ActionListener del boton triangulo
+	 * @param al Objeto de tipo ActionListener
+	 */
 	public void onClickTriangulo(ActionListener al) {
 		btnTriangulo.addActionListener(al);
 	}
 	
+	/**
+	 * WindowListener de la vista OpcionesPerimetro
+	 * @param wl Objeto de tipo WindowListener
+	 */
 	public void eventoCerrar(WindowListener wl) {
 		this.addWindowListener(wl);
 	}
 	
+	/**
+	 * 
+	 * @return Acceso al boton cuadrado
+	 */
 	public JButton getBtnCuadrado() {
 		return btnCuadrado;
 	}
-
+	
+	/**
+	 * 
+	 * @return Acceso al boton circulo
+	 */
 	public JButton getBtnCirculo() {
 		return btnCirculo;
 	}
 
+	/**
+	 * 
+	 * @return Acceso al boton rectangulo
+	 */
 	public JButton getBtnRectangulo() {
 		return btnRectangulo;
 	}
-
+	
+	/**
+	 * 
+	 * @return Acceso al boton triangulo
+	 */
 	public JButton getBtnTriangulo() {
 		return btnTriangulo;
 	}
 	
+	/**
+	 * Metodo que muestra una alerta de error
+	 * @param mensaje Mensaje en formato String
+	 */
 	public void muestraMensaje(String mensaje) {
 		JOptionPane.showMessageDialog(this, mensaje, "Error !", JOptionPane.ERROR_MESSAGE);
 	}

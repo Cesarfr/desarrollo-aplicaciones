@@ -28,7 +28,7 @@ public class Rectangulo {
 	}
 	
 	/**
-	 * 
+	 * Retorna el valor de la base del rectangulo en formato double
 	 * @return Retorna el valor de la base del rectangulo en formato double
 	 */
 	public double getBase() {
@@ -44,7 +44,7 @@ public class Rectangulo {
 	}
 	
 	/**
-	 * 
+	 * Retorna el valor de la altura en formato double
 	 * @return Retorna el valor de la altura en formato double
 	 */
 	public double getAltura() {
@@ -60,7 +60,7 @@ public class Rectangulo {
 	}
 	
 	/**
-	 * 
+	 * Retorna el valor del resultado en formato double
 	 * @return Retorna el valor del resultado en formato double
 	 */
 	public double getResultado() {

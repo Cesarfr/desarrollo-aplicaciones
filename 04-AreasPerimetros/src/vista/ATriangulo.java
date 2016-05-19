@@ -61,14 +61,14 @@ public class ATriangulo extends JFrame {
 		c.add(lbResultado);
 	}
 	/**
-	 * 
+	 * Retorna el valor de la base en formato double
 	 * @return Retorna el valor de la base en formato double
 	 */
 	public double getBase(){
 		return Double.parseDouble(txtBase.getText());
 	}
 	/**
-	 * 
+	 * Retorna el valor de la altura en formato double
 	 * @return Retorna el valor de la altura en formato double
 	 */
 	public double getAltura() {
@@ -100,7 +100,7 @@ public class ATriangulo extends JFrame {
 	}
 	
 	/**
-	 * 
+	 * Retorna el acceso al boton calcular
 	 * @return Retorna el acceso al boton calcular
 	 */
 	public JButton getBtnCalcular() {

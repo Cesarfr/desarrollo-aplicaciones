@@ -37,12 +37,12 @@ public class Rectangulo {
 		this.resultado = resultado;
 	}
 	
-	public double areaTriangulo(double base, double altura){
+	public double areaRectangulo(double base, double altura){
 		return resultado = (base * altura)/2;
 	}
 	
-	public double perimetroTriangulo(double lado1, double lado2, double lado3){
-		return resultado = lado1 + lado2 + lado3;
+	public double perimetroRectangulo(double base, double altura){
+		return resultado = (2 * base) + (2 * altura);
 	}
 	
 }

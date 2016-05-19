@@ -1,10 +1,12 @@
 package vista;
 
 import java.awt.Container;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 public class Menu extends JFrame{
 	
@@ -33,6 +35,26 @@ public class Menu extends JFrame{
 		c.add(lbMensaje);
 		c.add(btnArea);
 		c.add(btnPerimetro);
+	}
+	
+	public void onClickBtnArea(ActionListener al){
+		btnArea.addActionListener(al);
+	}
+	
+	public void onClickBtnPerimetro(ActionListener al){
+		btnPerimetro.addActionListener(al);
+	}
+	
+	public JButton getBtnArea() {
+		return btnArea;
+	}
+
+	public JButton getBtnPerimetro() {
+		return btnPerimetro;
+	}
+	
+	public void mostrarError(String error){
+		JOptionPane.showMessageDialog(this, error, "Error!", JOptionPane.ERROR_MESSAGE);
 	}
 	
 }

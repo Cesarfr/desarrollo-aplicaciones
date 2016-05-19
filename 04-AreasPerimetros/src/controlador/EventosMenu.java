@@ -7,10 +7,19 @@ import vista.Menu;
 import vista.OpcionesArea;
 import vista.OpcionesPerimetro;
 
+/**
+ * Clase controladora de los eventos del menu pricipal
+ * @author cesar
+ * @version 1.0
+ */
 public class EventosMenu implements ActionListener{
 	
 	private Menu vista = new Menu();
 	
+	/**
+	 * Constructor de la clase controladora
+	 * @param vista Vista del menu principal
+	 */
 	public EventosMenu(Menu vista){
 		this.vista = vista;
 		
@@ -18,6 +27,9 @@ public class EventosMenu implements ActionListener{
 		vista.onClickBtnPerimetro(this);
 	}
 	
+	/**
+	 * Metodo manejador de las acciones de los botones
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		try {
@@ -29,6 +41,7 @@ public class EventosMenu implements ActionListener{
 				vista.setVisible(false);
 			} else if (e.getSource() == vista.getBtnPerimetro()) {
 				OpcionesPerimetro opp = new OpcionesPerimetro();
+				EventosOpcionesPerimetro controlador = new EventosOpcionesPerimetro(opp);
 				opp.setVisible(true);
 			}
 		} catch (Exception e2) {

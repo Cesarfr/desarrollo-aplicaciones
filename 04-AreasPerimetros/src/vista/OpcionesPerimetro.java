@@ -2,6 +2,7 @@ package vista;
 
 import java.awt.Container;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -31,10 +32,10 @@ public class OpcionesPerimetro extends JFrame {
 		c.setLayout(null);
 
 		lbMensaje.setBounds(10, 10, 300, 30);
-		btnCirculo.setBounds(10, 30, 300, 90);
-		btnCuadrado.setBounds(10, 140, 300, 90);
-		btnRectangulo.setBounds(10, 250, 300, 90);
-		btnTriangulo.setBounds(10, 360, 300, 90);
+		btnCirculo.setBounds(10, 40, 300, 80);
+		btnCuadrado.setBounds(10, 140, 300, 80);
+		btnRectangulo.setBounds(10, 240, 300, 80);
+		btnTriangulo.setBounds(10, 340, 300, 80);
 
 		c.add(lbMensaje);
 		c.add(btnCirculo);
@@ -58,7 +59,11 @@ public class OpcionesPerimetro extends JFrame {
 	public void onClickTriangulo(ActionListener al) {
 		btnTriangulo.addActionListener(al);
 	}
-
+	
+	public void eventoCerrar(WindowListener wl) {
+		this.addWindowListener(wl);
+	}
+	
 	public JButton getBtnCuadrado() {
 		return btnCuadrado;
 	}

@@ -41,10 +41,13 @@ public class PTriangulo extends JFrame {
 		
 		lbLado1.setBounds(10, 10, 300, 30);
 		txtLado1.setBounds(10, 40, 300, 30);
-		lbLado2.setBounds(10, 80, 300, 300);
+		
+		lbLado2.setBounds(10, 80, 300, 30);
 		txtLado2.setBounds(10, 120, 300, 30);
+		
 		lbLado3.setBounds(10, 160, 300, 30);
 		txtLado3.setBounds(10, 200, 300, 30);
+		
 		btnCalcular.setBounds(10, 240, 300, 80);
 		lbResultado.setBounds(10, 320, 300, 30);
 		

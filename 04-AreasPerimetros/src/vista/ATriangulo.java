@@ -10,6 +10,12 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
+/**
+ * Vista para calcular el area del triangulo
+ * @author cesar
+ * @version 1.0
+ *
+ */
 public class ATriangulo extends JFrame {
 	
 	private JLabel lbBase = new JLabel("Medida de la base");
@@ -22,8 +28,11 @@ public class ATriangulo extends JFrame {
 	private JButton btnCalcular = new JButton("Calcular área");
 	private Container c = getContentPane();
 	
+	/**
+	 * Constructor de la clase ATriangulo para inicializar el Frame
+	 */
 	public ATriangulo() {
-		super.setTitle("Area Triangulo");
+		super.setTitle("Área Triangulo");
 		super.setSize(320, 480);
 		super.setResizable(false);
 		super.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -31,6 +40,9 @@ public class ATriangulo extends JFrame {
 		cargarControles();
 	}
 	
+	/**
+	 * Método para cargar los controles de la aplicación a la ventana
+	 */
 	private void cargarControles() {
 		c.setLayout(null);
 		
@@ -48,35 +60,64 @@ public class ATriangulo extends JFrame {
 		c.add(btnCalcular);
 		c.add(lbResultado);
 	}
-	
+	/**
+	 * 
+	 * @return Retorna el valor de la base en formato double
+	 */
 	public double getBase(){
 		return Double.parseDouble(txtBase.getText());
 	}
-	
+	/**
+	 * 
+	 * @return Retorna el valor de la altura en formato double
+	 */
 	public double getAltura() {
 		return Double.parseDouble(txtAltura.getText());
 	}
 	
+	/**
+	 * Muestra el resultado de la operacion en la vista
+	 * @param resultado Resultado de la operacion en formato String 
+	 */
 	public void setResultado(String resultado) {
 		lbResultado.setText(resultado);
 	}
 	
+	/**
+	 * ActionListener para el boton calcular
+	 * @param al Objeto de tipo ActionListener
+	 */
 	public void onClickBtnCalcular(ActionListener al) {
 		btnCalcular.addActionListener(al);
 	}
 	
+	/**
+	 * WindowListener para la vista
+	 * @param wl Objeto de tipo WindowListener
+	 */
 	public void eventoCerrar(WindowListener wl) {
 		this.addWindowListener(wl);
 	}
-
+	
+	/**
+	 * 
+	 * @return Retorna el acceso al boton calcular
+	 */
 	public JButton getBtnCalcular() {
 		return btnCalcular;
 	}
 	
+	/**
+	 * Método para mostrar una alerta de error
+	 * @param error Error generado en formato String
+	 */
 	public void mostrarError(String error) {
 		JOptionPane.showMessageDialog(this, error, "Error !", JOptionPane.ERROR_MESSAGE);
 	}
 	
+	/**
+	 * Método para limpiar las cajas de texto de la aplicación
+	 */
 	public void limpiarCajas() {
 		txtBase.setText(null);
 		txtAltura.setText(null);

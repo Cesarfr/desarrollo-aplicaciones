@@ -34,7 +34,7 @@ public class PCuadrado extends JFrame {
 		lbLado.setBounds(10, 10, 300, 30);
 		txtLado.setBounds(10, 40, 300, 30);
 		btnCalcular.setBounds(10, 80, 300, 100);
-		lbResultado.setBounds(10, 170, 300, 30);
+		lbResultado.setBounds(10, 190, 300, 30);
 		
 		c.add(lbLado);
 		c.add(txtLado);

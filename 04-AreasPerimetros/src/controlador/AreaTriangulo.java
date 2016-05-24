@@ -93,9 +93,14 @@ public class AreaTriangulo implements ActionListener, WindowListener {
 			altura = vista.getAltura();
 			
 			if(e.getSource() == vista.getBtnCalcular()) {
-				modelo.areaTriangulo(base, altura);
-				resultado = modelo.detectaDoble(modelo.getResultado());
-				vista.setResultado(String.format("Área: %s u²", resultado));
+				if(base < 0 || altura < 0) {
+					vista.mostrarError("Sólo números enteros!");
+					vista.limpiarCajas();
+				}else{
+					modelo.areaTriangulo(base, altura);
+					resultado = modelo.detectaDoble(modelo.getResultado());
+					vista.setResultado(String.format("Área: %s u²", resultado));
+				}
 			}
 		} catch (NumberFormatException e2) {
 			vista.mostrarError("Solo numeros!");

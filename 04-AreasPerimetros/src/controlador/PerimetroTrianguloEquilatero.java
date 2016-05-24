@@ -7,25 +7,26 @@ import java.awt.event.WindowListener;
 
 import modelo.Triangulo;
 import vista.OpcionesPerimetro;
-import vista.PTriangulo;
+import vista.PTrianguloEquilatero;
 
 /**
- * Clase controladora de los eventos para el perimetro del triangulo
+ * Clase controladora para el perímetro del triángulo equilatero
  * @author cesar
  * @version 1.0
  *
  */
-public class PerimetroTriangulo implements ActionListener, WindowListener {
+public class PerimetroTrianguloEquilatero implements ActionListener, WindowListener {
 	
-	private PTriangulo vista = new PTriangulo();
+	private PTrianguloEquilatero vista = new PTrianguloEquilatero();
 	private Triangulo modelo = new Triangulo();
 	
 	/**
-	 * Constructor de la clase controladora
-	 * @param vista Vista para calcular el perimetro del triangulo
-	 * @param modelo Modelo de las operaciones
+	 * Constructor de la clase PerimetroTrianguloEquilatero
+	 * @param vista Vista para calcular el perímetro del triángulo equilatero
+	 * @param modelo
 	 */
-	public PerimetroTriangulo(PTriangulo vista, Triangulo modelo) {
+	public PerimetroTrianguloEquilatero(PTrianguloEquilatero vista,
+			Triangulo modelo) {
 		this.vista = vista;
 		this.modelo = modelo;
 		
@@ -86,19 +87,19 @@ public class PerimetroTriangulo implements ActionListener, WindowListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		try {
-			double lado1 = 0.0;
-			double lado2 = 0.0;
-			double lado3 = 0.0;
+			double lado = 0.0;
+			lado = vista.getLado();
 			String resultado = "";
 			
-			lado1 = vista.getLado1();
-			lado2 = vista.getLado2();
-			lado3 = vista.getLado3();
-			
 			if(e.getSource() == vista.getBtnCalcular()) {
-				modelo.perimetroTriangulo(lado1, lado2, lado3);
-				resultado = modelo.detectaDoble(modelo.getResultado());
-				vista.setResultado(String.format("Perímetro: %s u", resultado));
+				if(lado < 0) {
+					vista.mostrarError("Sólo números positivos!");
+					vista.limpiarCajas();
+				}else {
+					modelo.perimetroTrianguloEquilatero(lado);
+					resultado = modelo.detectaDoble(modelo.getResultado());
+					vista.setResultado(String.format("Perímetro: %s u", resultado));
+				}
 			}
 		} catch (NumberFormatException e2) {
 			vista.mostrarError("Solo Numeros!");

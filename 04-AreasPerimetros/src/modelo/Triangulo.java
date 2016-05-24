@@ -137,12 +137,32 @@ public class Triangulo {
 	}
 	
 	/**
-	 * Operacion para calcular el perimetro del triangulo
-	 * @param base Base del triangulo en formato double
-	 * @param altura Altura del triangulo en formato double
+	 * Operacion para calcular el perimetro del triángulo equilatero
+	 * @param lado1 Lado 1 del triángulo en formato double 
 	 * @return Retorna el perimetro del triangulo
 	 */
-	public double perimetroTriangulo(double lado1, double lado2, double lado3){
+	public double perimetroTrianguloEquilatero(double lado1) {
+		return resultado = lado1 * 3;
+	}
+	
+	/**
+	 * Operación para calcular el perimetro del triángulo isoceles
+	 * @param lado1 Lado 1 del triángulo en formato double
+	 * @param lado2 Lado 2 del triángulo en formato double
+	 * @return Perímetro del triángulo
+	 */
+	public double perimetroTrianguloIsoceles(double lado1, double lado2) {
+		return resultado = (lado1 * 2) + lado2;
+	}
+	
+	/**
+	 * Operacion para calcular el perimetro del triangulo escaleno 
+	 * @param lado1 Lado 1 del triángulo en formato double
+	 * @param lado2 Lado 2 del triángulo en formato double
+	 * @param lado3 Lado 3 del triángulo en formato double
+	 * @return Perímetro del triángulo
+	 */
+	public double perimetroTrianguloEcaleno(double lado1, double lado2, double lado3){
 		return resultado = lado1 + lado2 + lado3;
 	}
 	

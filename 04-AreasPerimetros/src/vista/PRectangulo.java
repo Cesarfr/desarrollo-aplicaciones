@@ -32,7 +32,7 @@ public class PRectangulo extends JFrame {
 	 * Constructor de la clase PRectangulo para inicializar el Frame
 	 */
 	public PRectangulo() {
-		super.setTitle("Perímetro del rectangulo");
+		super.setTitle("Perímetro del rectángulo");
 		super.setSize(320, 480);
 		super.setResizable(false);
 		super.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -86,7 +86,7 @@ public class PRectangulo extends JFrame {
 	}
 	
 	/**
-	 * WindowListener para la vista PCirculo
+	 * WindowListener para la vista PRectangulo
 	 * @param wl Objeto de tipo WindowListener
 	 */
 	public void onClickBtnCalcular(ActionListener al) {

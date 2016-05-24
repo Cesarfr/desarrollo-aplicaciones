@@ -91,9 +91,14 @@ public class PerimetroCuadrado implements ActionListener, WindowListener {
 			lado = vista.getLado();
 			
 			if(e.getSource() == vista.getBtnCalcular()) {
-				modelo.perimetroCuadrado(lado);
-				resultado = modelo.detectaDoble(modelo.getResultado());
-				vista.setResultado(String.format("Perímetro: %s u", resultado));
+				if(lado < 0) {
+					vista.mostrarError("Sólo números enteros!");
+					vista.limpiarCajas();
+				}else {
+					modelo.perimetroCuadrado(lado);
+					resultado = modelo.detectaDoble(modelo.getResultado());
+					vista.setResultado(String.format("Perímetro: %s u", resultado));
+				}
 			}
 		} catch (NumberFormatException e2) {
 			vista.mostrarError("Solo Numeros!");

@@ -90,9 +90,14 @@ public class AreaCuadrado implements ActionListener, WindowListener{
 			lado = vista.getLado();
 			
 			if(e.getSource() == vista.getBtnCalcular()) {
-				modelo.areaCuadrado(lado);
-				resultado = modelo.detectaDoble(modelo.getResultado());
-				vista.setResultado(String.format("Área: %s u²", resultado));
+				if(lado < 0) {
+					vista.mostrarError("Sólo números positivos!");
+					vista.limpiarCajas();
+				}else {
+					modelo.areaCuadrado(lado);
+					resultado = modelo.detectaDoble(modelo.getResultado());
+					vista.setResultado(String.format("Área: %s u²", resultado));
+				}
 			}
 		} catch (NumberFormatException e2) {
 			vista.mostrarError("Solo numeros!");

@@ -43,6 +43,7 @@ public class EventosMenu implements ActionListener{
 				OpcionesPerimetro opp = new OpcionesPerimetro();
 				EventosOpcionesPerimetro controlador = new EventosOpcionesPerimetro(opp);
 				opp.setVisible(true);
+				vista.setVisible(false);
 			}
 		} catch (Exception e2) {
 			vista.mostrarError(e2.getMessage());

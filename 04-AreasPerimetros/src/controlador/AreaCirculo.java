@@ -44,9 +44,14 @@ public class AreaCirculo implements ActionListener, WindowListener {
 			radio = vac.getRadio();
 			
 			if (e.getSource() == vac.getBtnCalcular()) {
-				modelo.areaCirculo(radio);
-				resultado = modelo.detectaDoble(modelo.getResultado());
-				vac.setResultado(String.format("Área: %s u²", resultado));
+				if(radio < 0){
+					vac.mostrarError("Sólo números positivos!");
+					vac.limpiarCajas();
+				}else {
+					modelo.areaCirculo(radio);
+					resultado = modelo.detectaDoble(modelo.getResultado());
+					vac.setResultado(String.format("Área: %s u²", resultado));
+				}
 			}
 		} catch (NumberFormatException e2) {
 			vac.mostrarError("Solo Numeros!");

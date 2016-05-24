@@ -14,7 +14,8 @@ import vista.OpcionesPerimetro;
 import vista.PCirculo;
 import vista.PCuadrado;
 import vista.PRectangulo;
-import vista.PTriangulo;
+import vista.PTrianguloEscaleno;
+import vista.TipoTriangulo;
 
 /**
  * Clase controladora de eventos del menu de opciones (perimetro)
@@ -27,7 +28,7 @@ public class EventosOpcionesPerimetro implements ActionListener, WindowListener 
 	
 	/**
 	 * Cosntructor de la clase controladora
-	 * @param vista Vista delmenu de opciones
+	 * @param vista Vista del menu de opciones
 	 */
 	public EventosOpcionesPerimetro(OpcionesPerimetro vista) {
 		this.vista = vista;
@@ -110,10 +111,9 @@ public class EventosOpcionesPerimetro implements ActionListener, WindowListener 
 				par.setVisible(true);
 				vista.setVisible(false);
 			}else if(e.getSource() == vista.getBtnTriangulo()) {
-				PTriangulo pat = new PTriangulo();
-				Triangulo modelo = new Triangulo();
-				PerimetroTriangulo controlador = new PerimetroTriangulo(pat, modelo);
-				pat.setVisible(true);
+				TipoTriangulo tp = new TipoTriangulo();
+				EventosTipoTriangulo evt = new EventosTipoTriangulo(tp);
+				tp.setVisible(true);
 				vista.setVisible(false);
 			}
 		} catch (Exception e2) {

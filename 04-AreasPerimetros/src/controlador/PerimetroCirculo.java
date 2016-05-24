@@ -91,9 +91,14 @@ public class PerimetroCirculo implements ActionListener, WindowListener {
 			diametro = vista.getDiametro();
 			
 			if(e.getSource() == vista.getBtnCalcular()) {
-				modelo.perimetroCirculo(diametro);
-				resultado = modelo.detectaDoble(modelo.getResultado());
-				vista.setResultado(String.format("Perímetro: %s u", resultado));
+				if(diametro < 0) {
+					vista.mostrarError("Sólo números enteros!");
+					vista.limpiarCajas();
+				}else {
+					modelo.perimetroCirculo(diametro);
+					resultado = modelo.detectaDoble(modelo.getResultado());
+					vista.setResultado(String.format("Perímetro: %s u", resultado));
+				}
 			}
 		} catch (NumberFormatException e2) {
 			vista.mostrarError("Solo Numeros!");

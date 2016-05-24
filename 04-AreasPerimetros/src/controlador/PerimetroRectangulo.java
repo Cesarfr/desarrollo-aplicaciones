@@ -94,9 +94,14 @@ public class PerimetroRectangulo implements ActionListener, WindowListener {
 			altura = vista.getAltura();
 			
 			if(e.getSource() == vista.getBtnCalcular()) {
-				modelo.perimetroRectangulo(base, altura);
-				resultado = modelo.detectaDoble(modelo.getResultado());
-				vista.setResultado(String.format("Perímetro: %s u", resultado));
+				if(base < 0 || altura < 0) {
+					vista.mostrarError("Sólo números enteros!");
+					vista.limpiarCajas();
+				}else {
+					modelo.perimetroRectangulo(base, altura);
+					resultado = modelo.detectaDoble(modelo.getResultado());
+					vista.setResultado(String.format("Perímetro: %s u", resultado));
+				}
 			}
 		} catch (NumberFormatException e2) {
 			vista.mostrarError("Solo Numeros!");

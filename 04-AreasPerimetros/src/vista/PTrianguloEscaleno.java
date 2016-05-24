@@ -11,12 +11,12 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
- * Vista para calcular el perímetro del triángulo
+ * Vista para calcular el perímetro del triángulo escaleno
  * @author cesar
  * @version 1.0
  *
  */
-public class PTriangulo extends JFrame {
+public class PTrianguloEscaleno extends JFrame {
 	
 	private JLabel lbLado1 = new JLabel("Medida para el lado 1");
 	private JLabel lbLado2 = new JLabel("Medida para el lado 2");
@@ -31,10 +31,10 @@ public class PTriangulo extends JFrame {
 	private Container c = getContentPane();
 	
 	/**
-	 * Constructor de la clase PTriangulo para inicializar el Frame
+	 * Constructor de la clase PTrianguloEscaleno para inicializar el Frame
 	 */
-	public PTriangulo() {
-		super.setTitle("Perímetro del triangulo");
+	public PTrianguloEscaleno() {
+		super.setTitle("Perímetro del triángulo");
 		super.setSize(320, 480);
 		super.setResizable(false);
 		super.setDefaultCloseOperation(DISPOSE_ON_CLOSE);

@@ -1,18 +1,26 @@
 package app;
 
-import javax.swing.SwingUtilities;
-
-import controlador.CScreen;
+import controlador.COpciones;
+import vista.Opciones;
 import vista.Screen;
 
+/**
+ * Clase principal de la aplicacion MaquinaDispensadora
+ * @author cesar
+ * @version 1.0
+ *
+ */
 public class MaquinaDispensadora {
-
+	
+	/**
+	 * Método main de la aplicacion
+	 * @param args Valores de la aplicacion 
+	 */
 	public static void main(String[] args) {
+		
 		Screen s = new Screen();
-		CScreen con = new CScreen(s);
 		s.setVisible(true);
 
-		Thread espera = new Thread();
 		try {
 			int inicio = 0;
 			int fin = 100;
@@ -23,11 +31,16 @@ public class MaquinaDispensadora {
 			
 			for (int i = inicio; i <= fin; i+=20) {
 				s.setValorBarra(i);
-				espera.sleep(1000);
+				Thread.sleep(10);
 			}
+			Thread.sleep(100);
+			Opciones vista = new Opciones();
+			COpciones controlador = new COpciones(vista);
+			vista.setVisible(true);
+			s.setVisible(false);
 		} catch (Exception e2) {
 			System.out.println("Error " + e2.getMessage());
-		}
+		} 
 		
 	}
 

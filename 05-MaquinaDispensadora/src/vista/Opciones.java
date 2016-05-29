@@ -7,7 +7,14 @@ import java.awt.event.WindowListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
+/**
+ * Vista para las opciones de compra
+ * @author cesar
+ * @version 1.0
+ *
+ */
 public class Opciones extends JFrame{
 	
 	private JLabel lbTitulo = new JLabel("Estas son las opciones");
@@ -17,6 +24,9 @@ public class Opciones extends JFrame{
 	private JButton btnRefrescos = new JButton("Refrescos");
 	private Container c = getContentPane();
 	
+	/**
+	 * Constructor de la vista Opciones
+	 */
 	public Opciones() {
 		super.setTitle("Opciones");
 		super.setSize(320, 480);
@@ -26,14 +36,17 @@ public class Opciones extends JFrame{
 		cargarControles();
 	}
 	
+	/**
+	 * Método par cargar los controles a la vista
+	 */
 	private void cargarControles() {
 		c.setLayout(null);
 		
 		lbTitulo.setBounds(10, 10, 300, 30);
 		btnChocolates.setBounds(10, 40, 300, 80);
-		btnDulces.setBounds(10, 120, 300, 80);
-		btnGalletas.setBounds(10, 200, 300, 80);
-		btnRefrescos.setBounds(10, 280, 300, 80);
+		btnDulces.setBounds(10, 140, 300, 80);
+		btnGalletas.setBounds(10, 240, 300, 80);
+		btnRefrescos.setBounds(10, 340, 300, 80);
 		
 		c.add(lbTitulo);
 		c.add(btnChocolates);
@@ -41,19 +54,35 @@ public class Opciones extends JFrame{
 		c.add(btnGalletas);
 		c.add(btnRefrescos);
 	}
-
+	
+	/**
+	 * Método para obtener el acceso al boton dulces
+	 * @return Objeto de tipo JButton
+	 */
 	public JButton getBtnDulces() {
 		return btnDulces;
 	}
-
+	
+	/**
+	 * Método para obtener el acceso al boton chocolates
+	 * @return Objeto de tipo JButton
+	 */
 	public JButton getBtnChocolates() {
 		return btnChocolates;
 	}
-
+	
+	/**
+	 * Método para obtener el acceso al boton galletas
+	 * @return Objeto de tipo JButton
+	 */
 	public JButton getBtnGalletas() {
 		return btnGalletas;
 	}
-
+	
+	/**
+	 * Método para obtener el acceso al boton refrescos
+	 * @return Objeto de tipo JButton
+	 */
 	public JButton getBtnRefrescos() {
 		return btnRefrescos;
 	}
@@ -96,5 +125,13 @@ public class Opciones extends JFrame{
 	 */
 	public void onClickBtnRefrescos(ActionListener al) {
 		btnRefrescos.addActionListener(al);
+	}
+	
+	/**
+	 * Método para mostrar una alerta de error
+	 * @param error Error generado en formato String
+	 */
+	public void mostrarError(String error) {
+		JOptionPane.showMessageDialog(this, error, "Error !", JOptionPane.ERROR_MESSAGE);
 	}
 }

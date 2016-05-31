@@ -95,7 +95,7 @@ public class DetalleDulces extends JFrame {
 		super.setTitle("Detalle Dulces");
 		super.setSize(320, 580);
 		super.setResizable(false);
-		super.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		super.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
 		cargarControles();
 	}
@@ -108,7 +108,7 @@ public class DetalleDulces extends JFrame {
 		
 		lbIconoCupido.setBounds(10, 10, 30, 30);
 		lbIconoCupido.setIcon(new ImageIcon("images/dulces/cupido.png"));
-		lbPrecioCupido.setBounds(115, 0, 50, 30);
+		lbPrecioCupido.setBounds(115, -4, 50, 30);
 		lbTextoCupido.setBounds(50, 0, 250, 50);
 		chkCupido.setBounds(190, 0, 130, 20);
 		
@@ -132,7 +132,7 @@ public class DetalleDulces extends JFrame {
 		
 		lbIconoManita.setBounds(10, 210, 30, 30);
 		lbIconoManita.setIcon(new ImageIcon("images/dulces/manita.png"));
-		lbPrecioManita.setBounds(115, 198, 50, 30);
+		lbPrecioManita.setBounds(115, 196, 50, 30);
 		lbTextoManita.setBounds(50, 200, 250, 50);
 		chkManita.setBounds(190, 200, 130, 20);
 		
@@ -162,7 +162,7 @@ public class DetalleDulces extends JFrame {
 		
 		lbIconoSandia.setBounds(10, 460, 30, 30);
 		lbIconoSandia.setIcon(new ImageIcon("images/dulces/sandia.jpg"));
-		lbPrecioSandia.setBounds(115, 448, 50, 30);
+		lbPrecioSandia.setBounds(115, 446, 50, 30);
 		lbTextoSandia.setBounds(50, 450, 250, 50);
 		chkSandia.setBounds(190, 450, 130, 20);
 		

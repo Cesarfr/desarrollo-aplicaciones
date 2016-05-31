@@ -121,37 +121,37 @@ public class DetalleRefrescos extends JFrame {
 		
 		lbIconoCoca.setBounds(10, 110, 30, 30);
 		lbIconoCoca.setIcon(new ImageIcon("images/refrescos/coca.jpg"));
-		lbPrecioCoca.setBounds(115, 100, 50, 30);
+		lbPrecioCoca.setBounds(115, 98, 50, 30);
 		lbTextoCoca.setBounds(50, 100, 250, 50);
 		chkCoca.setBounds(190, 100, 130, 20);
 		
 		lbIconoCrush.setBounds(10, 160, 30, 30);
 		lbIconoCrush.setIcon(new ImageIcon("images/refrescos/crushp.jpg"));
-		lbPrecioCrush.setBounds(115, 150, 50, 30);
+		lbPrecioCrush.setBounds(115, 148, 50, 30);
 		lbTextoCrush.setBounds(50, 150, 250, 50);
 		chkCrush.setBounds(190, 150, 130, 20);
 		
 		lbIconoFanta.setBounds(10, 210, 30, 30);
 		lbIconoFanta.setIcon(new ImageIcon("images/refrescos/fanta.jpg"));
-		lbPrecioFanta.setBounds(115, 200, 50, 30);
+		lbPrecioFanta.setBounds(115, 198, 50, 30);
 		lbTextoFanta.setBounds(50, 200, 250, 50);
 		chkFanta.setBounds(190, 200, 130, 20);
 		
 		lbIconoJarrito.setBounds(10, 260, 30, 30);
 		lbIconoJarrito.setIcon(new ImageIcon("images/refrescos/jarritop.jpg"));
-		lbPrecioJarrito.setBounds(115, 250, 50, 30);
+		lbPrecioJarrito.setBounds(115, 246, 50, 30);
 		lbTextoJarrito.setBounds(50, 250, 250, 50);
 		chkJarrito.setBounds(190, 250, 130, 20);
 		
 		lbIconoPenafiel.setBounds(10, 310, 30, 30);
 		lbIconoPenafiel.setIcon(new ImageIcon("images/refrescos/penafiel.jpg"));
-		lbPrecioPenafiel.setBounds(115, 300, 50, 30);
+		lbPrecioPenafiel.setBounds(115, 298, 50, 30);
 		lbTextoPenafiel.setBounds(50, 300, 250, 50);
 		chkPenafiel.setBounds(190, 300, 130, 20);
 		
 		lbIconoManzanita.setBounds(10, 360, 30, 30);
 		lbIconoManzanita.setIcon(new ImageIcon("images/refrescos/manzanita.jpg"));
-		lbPrecioManzanita.setBounds(115, 350, 50, 30);
+		lbPrecioManzanita.setBounds(115, 348, 50, 30);
 		lbTextoManzanita.setBounds(50, 350, 250, 50);
 		chkManzanita.setBounds(190, 350, 130, 20);
 		
@@ -163,7 +163,7 @@ public class DetalleRefrescos extends JFrame {
 		
 		lbIconoSquirt.setBounds(10, 460, 30, 30);
 		lbIconoSquirt.setIcon(new ImageIcon("images/refrescos/squirt.jpg"));
-		lbPrecioSquirt.setBounds(115, 450, 50, 30);
+		lbPrecioSquirt.setBounds(115, 448, 50, 30);
 		lbTextoSquirt.setBounds(50, 450, 250, 50);
 		chkSquirt.setBounds(190, 450, 130, 20);
 		

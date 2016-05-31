@@ -162,7 +162,7 @@ public class DetalleChocolates extends JFrame {
 		
 		lbIconoToblerone.setBounds(10, 460, 30, 30);
 		lbIconoToblerone.setIcon(new ImageIcon("images/chocolates/toblerone.jpg"));
-		lbPrecioToblerone.setBounds(115, 450, 50, 30);
+		lbPrecioToblerone.setBounds(115, 447, 50, 30);
 		lbTextoToblerone.setBounds(50, 450, 250, 50);
 		chkToblerone.setBounds(190, 450, 130, 20);
 		

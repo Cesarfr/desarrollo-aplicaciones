@@ -95,6 +95,7 @@ public class CDetDul implements ActionListener, WindowListener {
 			JLabel [] lbText = null;
 			JLabel [] lbIcons = null;
 			JLabel [] lbPrices = null;
+			int total = 0;
 			
 			if(e.getSource() == vista.getBtnComprar()) {
 				
@@ -115,13 +116,17 @@ public class CDetDul implements ActionListener, WindowListener {
 						productos[i][1] = modelo.getDescripcion();
 						productos[i][2] = modelo.getIcono();
 						productos[i][3] = modelo.getPrecio();
+						total += modelo.getPrecio();
 					}
 				}
-				
-				Comprar comprar = new Comprar(productos);
-				CComprar cont = new CComprar(comprar);
-				comprar.setVisible(true);
-				vista.setVisible(false);
+				if(total >= 100) {
+					vista.mostrarError("Tu compra no puede ser mayor o igual a $100");
+				}else {
+					Comprar comprar = new Comprar(productos);
+					CComprar cont = new CComprar(comprar);
+					comprar.setVisible(true);
+					vista.setVisible(false);
+				}
 			}
 		} catch (Exception e2) {
 			vista.mostrarError(String.format("Ha ocurrido un error de tipo: %s", e2.getMessage()));

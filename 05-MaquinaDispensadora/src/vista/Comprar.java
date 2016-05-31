@@ -76,12 +76,18 @@ public class Comprar extends JFrame {
 				lbIcono[i].setBounds(10, y, 30, 30);
 				lbIcono[i].setIcon(new ImageIcon(ic));
 				
-				lbPrecio[i] = precio;
-				lbPrecio[i].setBounds(115, y2, 50, 30);
-				lbPrecio[i].setText(Integer.toString(pr));
+				if(descripcion.length() > 35) {
+					lbPrecio[i] = precio;
+					lbPrecio[i].setBounds(115, (y2-6), 50, 20);
+					lbPrecio[i].setText(Integer.toString(pr));
+				}else {
+					lbPrecio[i] = precio;
+					lbPrecio[i].setBounds(115, (y2+3), 50, 20);
+					lbPrecio[i].setText(Integer.toString(pr));
+				}
 				
 				lbTexto[i] = texto;
-				lbTexto[i].setBounds(50, y3, 250, 50);
+				lbTexto[i].setBounds(50, y3, 250, 40);
 				lbTexto[i].setText(descripcion);
 				
 				lbNombre[i] = nom;
@@ -101,15 +107,21 @@ public class Comprar extends JFrame {
 			
 		}
 		
-		lbTotal.setBounds(10, 380, 150, 30);
-		lbNTotal.setBounds(180, 380, 150, 30);
+		lbTotal.setBounds(10, y3, 150, 30);
+		lbNTotal.setBounds(180, y3, 150, 30);
 		lbNTotal.setText(Integer.toString(total));
-		txtMonto.setBounds(10, 410, 300, 30);
-		btnPagar.setBounds(10, 440, 300, 20);
+		y3 += 40;
+		txtMonto.setBounds(10, y3, 300, 30);
+		y3 += 40;
+		btnPagar.setBounds(10, y3, 300, 40);
 		c.add(lbTotal);
 		c.add(lbNTotal);
 		c.add(txtMonto);
 		c.add(btnPagar);
+		
+		if(y3 > 460){
+			super.setSize(320, 680);
+		}
 	}
 	
 	/**

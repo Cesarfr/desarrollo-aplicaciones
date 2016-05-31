@@ -97,7 +97,7 @@ public class DetalleGalletas extends JFrame {
 		super.setTitle("Detalle Galletas");
 		super.setSize(320, 580);
 		super.setResizable(false);
-		super.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		super.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
 		cargarControles();
 	}
@@ -122,19 +122,19 @@ public class DetalleGalletas extends JFrame {
 		
 		lbIconoCrakets.setBounds(10, 110, 30, 30);
 		lbIconoCrakets.setIcon(new ImageIcon("images/galletas/crakets.jpg"));
-		lbPrecioCrakets.setBounds(115, 100, 50, 30);
+		lbPrecioCrakets.setBounds(115, 98, 50, 30);
 		lbTextoCrakets.setBounds(50, 100, 250, 50);
 		chkCrakets.setBounds(190, 100, 130, 20);
 		
 		lbIconoCremax.setBounds(10, 160, 30, 30);
 		lbIconoCremax.setIcon(new ImageIcon("images/galletas/cremax.jpg"));
-		lbPrecioCremax.setBounds(115, 148, 50, 30);
+		lbPrecioCremax.setBounds(115, 146, 50, 30);
 		lbTextoCremax.setBounds(50, 150, 250, 50);
 		chkCremax.setBounds(190, 150, 130, 20);
 		
 		lbIconoFlorentinas.setBounds(10, 210, 30, 30);
 		lbIconoFlorentinas.setIcon(new ImageIcon("images/galletas/florentinas.jpg"));
-		lbPrecioFlorentinas.setBounds(115, 198, 50, 30);
+		lbPrecioFlorentinas.setBounds(115, 196, 50, 30);
 		lbTextoFlorentinas.setBounds(50, 200, 250, 50);
 		chkFlorentinas.setBounds(190, 200, 130, 20);
 		
@@ -152,13 +152,13 @@ public class DetalleGalletas extends JFrame {
 		
 		lbIconoMamut.setBounds(10, 360, 30, 30);
 		lbIconoMamut.setIcon(new ImageIcon("images/galletas/mamut.jpg"));
-		lbPrecioMamut.setBounds(115, 350, 50, 30);
+		lbPrecioMamut.setBounds(115, 348, 50, 30);
 		lbTextoMamut.setBounds(50, 350, 250, 50);
 		chkMamut.setBounds(190, 350, 130, 20);
 		
 		lbIconoOreo.setBounds(10, 410, 30, 30);
 		lbIconoOreo.setIcon(new ImageIcon("images/galletas/oreo.jpg"));
-		lbPrecioOreo.setBounds(115, 399, 50, 30);
+		lbPrecioOreo.setBounds(115, 398, 50, 30);
 		lbTextoOreo.setBounds(50, 400, 250, 50);
 		chkOreo.setBounds(190, 400, 130, 20);
 		

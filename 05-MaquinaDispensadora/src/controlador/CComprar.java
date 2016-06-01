@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.util.ArrayList;
 
 import modelo.Producto;
 import modelo.RegresaCambio;
@@ -20,14 +21,14 @@ import vista.Opciones;
 public class CComprar implements ActionListener, WindowListener {
 	
 	private Comprar vista = new Comprar();
-	private Object [][] productos = new Object [11][4];
+	private ArrayList<Producto> productos = new ArrayList<Producto>();
 	
 	/**
 	 * Constructor del controlador
 	 * @param vista Vista de tipo Comprar
-	 * @param productos Array de productos
+	 * @param productos ArrayList de productos
 	 */
-	public CComprar(Comprar vista, Object[][] productos) {
+	public CComprar(Comprar vista, ArrayList<Producto> productos) {
 		this.vista = vista;
 		this.productos = productos;
 		vista.onClickBtnComprar(this);

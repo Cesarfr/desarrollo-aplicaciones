@@ -2,9 +2,11 @@ package controlador;
 
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.util.ArrayList;
 
 import javax.swing.JLabel;
 
+import modelo.Producto;
 import modelo.RegresaCambio;
 import vista.Cambio;
 import vista.Opciones;
@@ -20,16 +22,16 @@ public class CCambio implements WindowListener {
 	private Cambio vista = new Cambio();
 	private RegresaCambio modelo = new RegresaCambio();
 	private int total = 0;
-	private Object [][] productos = new Object [11][4];
+	private ArrayList<Producto> productos = new ArrayList<Producto>();
 	
 	/**
 	 * Constructor del controlador
 	 * @param vista Vista de tipo Cambio
 	 * @param modelo Modelo de tipo RegresaCambio
 	 * @param total Total del cambio a regresar en formato int
-	 * @param productos Array de productos
+	 * @param productos ArrayList de productos
 	 */
-	public CCambio(Cambio vista, RegresaCambio modelo, int total, Object [][] productos) {
+	public CCambio(Cambio vista, RegresaCambio modelo, int total, ArrayList<Producto> productos) {
 		this.vista = vista;
 		this.modelo = modelo;
 		this.total = total;
@@ -64,7 +66,7 @@ public class CCambio implements WindowListener {
 	@Override
 	public void windowClosing(WindowEvent e) {
 		Opciones op = new Opciones();
-		Object [][] productos = new Object [11][4];
+		ArrayList<Producto> productos = new ArrayList<Producto>();
 		COpciones cont = new COpciones(op, productos);
 		op.setVisible(true);
 		vista.setVisible(false);

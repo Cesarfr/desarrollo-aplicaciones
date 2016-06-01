@@ -3,6 +3,7 @@ package vista;
 import java.awt.Container;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowListener;
+import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -10,6 +11,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+
+import modelo.Producto;
 
 /**
  * Vista para los productosuctos seleccionados
@@ -30,7 +33,7 @@ public class Comprar extends JFrame {
 	private JTextField txtMonto = new JTextField();
 	private JButton btnPagar = new JButton("Pagar");
 	private Container c = getContentPane();
-	private Object [][] productos = new Object [11][4];
+	private ArrayList<Producto> productos = new ArrayList<Producto>();
 	
 	/**
 	 * Constructor por default de la vista
@@ -39,12 +42,13 @@ public class Comprar extends JFrame {
 	
 	/**
 	 * Constructor de la vista Comprar
-	 * @param productos Array de productos
+	 * @param productos ArrayList de productos
 	 */
-	public Comprar(Object[][] productos) {
+	public Comprar(ArrayList<Producto> productos) {
 		this.productos = productos;
+		
 		super.setTitle("Comprar");
-		super.setSize(320, 500);
+		super.setSize(320, 480);
 		super.setResizable(false);
 		super.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		
@@ -54,7 +58,7 @@ public class Comprar extends JFrame {
 	/**
 	 * Método par cargar los controles a la vista
 	 */
-	private void cargarControles(/*Object[][] productos*/) {
+	private void cargarControles() {
 		c.setLayout(null);
 		
 		int y = 10;
@@ -62,18 +66,22 @@ public class Comprar extends JFrame {
 		int y3 = 0;
 		int total = 0;
 		
-		for(int i = 0; i<= productos.length-1; i++) {
+		for(int i = 0; i<= productos.size()-1; i++) {
 			JLabel icono = new JLabel();
 			JLabel nom = new JLabel();
 			JLabel texto = new JLabel();
 			JLabel precio = new JLabel();
 			
-			if(productos[i][0] != null) {
+			Producto p = new Producto();
+			
+			if(!productos.isEmpty()) {
 				
-				String nombre = (String) productos[i][0];
-				String descripcion = (String) productos[i][1];
-				String ic = (String) productos[i][2];
-				int pr = (int) productos[i][3];
+				p = productos.get(i);
+				
+				String nombre = p.getNombre();
+				String descripcion = p.getDescripcion();
+				String ic = p.getIcono();
+				int pr = p.getPrecio();
 				
 				lbIcono[i] = icono;
 				lbIcono[i].setBounds(10, y, 30, 30);

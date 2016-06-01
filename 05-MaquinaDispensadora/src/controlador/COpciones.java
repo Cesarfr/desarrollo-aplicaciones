@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.util.ArrayList;
 
 import modelo.Producto;
 import vista.Comprar;
@@ -22,7 +23,7 @@ import vista.Opciones;
 public class COpciones implements ActionListener, WindowListener{
 	
 	private Opciones vista = new Opciones();
-	private Object [][] productos = new Object [11][4];
+	private ArrayList<Producto> productos = new ArrayList<Producto>();
 	
 	/**
 	 * Constructor de la clase COpciones
@@ -41,9 +42,9 @@ public class COpciones implements ActionListener, WindowListener{
 	/**
 	 * Constructor de la clase COpciones
 	 * @param vista Vista de tipo Opciones
-	 * @param productos Array de productos
+	 * @param productos ArrayList de productos
 	 */
-	public COpciones(Opciones vista, Object [][] productos) {
+	public COpciones(Opciones vista, ArrayList<Producto> productos) {
 		this.vista = vista;
 		this.productos = productos;
 		
@@ -127,8 +128,8 @@ public class COpciones implements ActionListener, WindowListener{
 				dtr.setVisible(true);
 				vista.setVisible(false);
 			}else if(e.getSource() == vista.getBtnPagar()) {
-//				System.out.println(productos.length);
-				if(productos[0][0] == null) {
+				
+				if(productos.isEmpty()) {
 					vista.mostrarError("No hay productos!!");
 				}else {
 					Comprar comprar = new Comprar(productos);

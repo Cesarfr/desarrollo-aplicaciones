@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.util.ArrayList;
 
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
@@ -23,15 +24,15 @@ public class CDetGall implements ActionListener, WindowListener {
 	
 	private DetalleGalletas vista = new DetalleGalletas();
 	private Producto modelo = new Producto();
-	private Object [][] productos = new Object [11][4];
+	private ArrayList<Producto> productos = new ArrayList<Producto>();
 	
 	/**
 	 * Constructor del controlador
 	 * @param vista Vista de tipo DetalleGalletas
 	 * @param modelo Modelo de tipo Producto
-	 * @param productos Array de productos
+	 * @param productos ArrayList de productos
 	 */
-	public CDetGall(DetalleGalletas vista, Producto modelo, Object[][] productos) {
+	public CDetGall(DetalleGalletas vista, Producto modelo, ArrayList<Producto> productos) {
 		this.vista = vista;
 		this.modelo = modelo;
 		this.productos = productos;
@@ -108,15 +109,13 @@ public class CDetGall implements ActionListener, WindowListener {
 				
 				for (int i = 0; i <= chlSelec.length-1; i++) {
 					if(chlSelec[i].isSelected()) {
-						modelo.setNombre(chlSelec[i].getText());
-						modelo.setDescripcion(lbText[i].getText());
-						modelo.setIcono(lbIcons[i].getIcon().toString());
-						modelo.setPrecio(Integer.parseInt(lbPrices[i].getText()));
-						productos[i][0] = modelo.getNombre();
-						productos[i][1] = modelo.getDescripcion();
-						productos[i][2] = modelo.getIcono();
-						productos[i][3] = modelo.getPrecio();
-						total += modelo.getPrecio();
+						Producto p = new Producto();
+						p.setNombre(chlSelec[i].getText());
+						p.setDescripcion(lbText[i].getText());
+						p.setIcono(lbIcons[i].getIcon().toString());
+						p.setPrecio(Integer.parseInt(lbPrices[i].getText()));
+						productos.add(p);
+						total += p.getPrecio();
 					}
 				}
 				if(total >= 100) {

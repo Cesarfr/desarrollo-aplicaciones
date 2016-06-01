@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
- * Vista para los productos seleccionados
+ * Vista para los productosuctos seleccionados
  * @author cesar
  * @version 1.0
  *
@@ -30,6 +30,7 @@ public class Comprar extends JFrame {
 	private JTextField txtMonto = new JTextField();
 	private JButton btnPagar = new JButton("Pagar");
 	private Container c = getContentPane();
+	private Object [][] productos = new Object [11][4];
 	
 	/**
 	 * Constructor por default de la vista
@@ -38,20 +39,22 @@ public class Comprar extends JFrame {
 	
 	/**
 	 * Constructor de la vista Comprar
+	 * @param productos Array de productos
 	 */
 	public Comprar(Object[][] productos) {
+		this.productos = productos;
 		super.setTitle("Comprar");
 		super.setSize(320, 500);
 		super.setResizable(false);
 		super.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		
-		cargarControles(productos);
+		cargarControles();
 	}
 	
 	/**
 	 * Método par cargar los controles a la vista
 	 */
-	private void cargarControles(Object[][] prod) {
+	private void cargarControles(/*Object[][] productos*/) {
 		c.setLayout(null);
 		
 		int y = 10;
@@ -59,18 +62,18 @@ public class Comprar extends JFrame {
 		int y3 = 0;
 		int total = 0;
 		
-		for(int i = 0; i<= prod.length-1; i++) {
+		for(int i = 0; i<= productos.length-1; i++) {
 			JLabel icono = new JLabel();
 			JLabel nom = new JLabel();
 			JLabel texto = new JLabel();
 			JLabel precio = new JLabel();
 			
-			if(prod[i][0] != null) {
+			if(productos[i][0] != null) {
 				
-				String nombre = (String) prod[i][0];
-				String descripcion = (String) prod[i][1];
-				String ic = (String) prod[i][2];
-				int pr = (int) prod[i][3];
+				String nombre = (String) productos[i][0];
+				String descripcion = (String) productos[i][1];
+				String ic = (String) productos[i][2];
+				int pr = (int) productos[i][3];
 				
 				lbIcono[i] = icono;
 				lbIcono[i].setBounds(10, y, 30, 30);

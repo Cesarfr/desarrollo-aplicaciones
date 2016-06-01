@@ -20,14 +20,16 @@ import vista.Opciones;
 public class CComprar implements ActionListener, WindowListener {
 	
 	private Comprar vista = new Comprar();
+	private Object [][] productos = new Object [11][4];
 	
 	/**
 	 * Constructor del controlador
 	 * @param vista Vista de tipo Comprar
+	 * @param productos Array de productos
 	 */
-	public CComprar(Comprar vista) {
+	public CComprar(Comprar vista, Object[][] productos) {
 		this.vista = vista;
-		
+		this.productos = productos;
 		vista.onClickBtnComprar(this);
 		vista.eventoVentana(this);
 	}
@@ -44,10 +46,9 @@ public class CComprar implements ActionListener, WindowListener {
 	@Override
 	public void windowClosing(WindowEvent e) {
 		Opciones op = new Opciones();
-		COpciones cont = new COpciones(op);
+		COpciones cont = new COpciones(op, productos);
 		op.setVisible(true);
 		vista.setVisible(false);
-		vista.mostrarError("Venta cancelada!");
 	}
 	
 	/**
@@ -96,7 +97,7 @@ public class CComprar implements ActionListener, WindowListener {
 					total = vista.getMonto() - vista.getTotal();
 					Cambio cm = new Cambio();
 					RegresaCambio modelo = new RegresaCambio();
-					CCambio control = new CCambio(cm, modelo, total);
+					CCambio control = new CCambio(cm, modelo, total, productos);
 					cm.setVisible(true);
 					vista.setVisible(false);
 				}

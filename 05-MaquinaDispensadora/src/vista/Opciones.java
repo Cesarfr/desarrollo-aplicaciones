@@ -22,6 +22,7 @@ public class Opciones extends JFrame{
 	private JButton btnChocolates = new JButton("Chocolates");
 	private JButton btnGalletas = new JButton("Galletas");
 	private JButton btnRefrescos = new JButton("Refrescos");
+	private JButton btnPagar = new JButton("Pagar");
 	private Container c = getContentPane();
 	
 	/**
@@ -43,16 +44,26 @@ public class Opciones extends JFrame{
 		c.setLayout(null);
 		
 		lbTitulo.setBounds(10, 10, 300, 30);
-		btnChocolates.setBounds(10, 40, 300, 80);
-		btnDulces.setBounds(10, 140, 300, 80);
-		btnGalletas.setBounds(10, 240, 300, 80);
-		btnRefrescos.setBounds(10, 340, 300, 80);
+		btnChocolates.setBounds(10, 40, 300, 60);
+		btnDulces.setBounds(10, 120, 300, 60);
+		btnGalletas.setBounds(10, 220, 300, 60);
+		btnRefrescos.setBounds(10, 320, 300, 60);
+		btnPagar.setBounds(50, 400, 220, 40);
 		
 		c.add(lbTitulo);
 		c.add(btnChocolates);
 		c.add(btnDulces);
 		c.add(btnGalletas);
 		c.add(btnRefrescos);
+		c.add(btnPagar);
+	}
+	
+	/**
+	 * Método para obtener el acceso al boton pagar
+	 * @return Objeto de tipo JButton
+	 */
+	public JButton getBtnPagar() {
+		return btnPagar;
 	}
 	
 	/**
@@ -125,6 +136,14 @@ public class Opciones extends JFrame{
 	 */
 	public void onClickBtnRefrescos(ActionListener al) {
 		btnRefrescos.addActionListener(al);
+	}
+	
+	/**
+	 * ActionListener para el boton pagar
+	 * @param al Objeto de tipo ActionListener
+	 */
+	public void onClickBtnPagar(ActionListener al) {
+		btnPagar.addActionListener(al);
 	}
 	
 	/**

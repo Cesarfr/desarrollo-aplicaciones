@@ -23,15 +23,18 @@ public class CDetRef implements ActionListener, WindowListener {
 	
 	private DetalleRefrescos vista = new DetalleRefrescos();
 	private Producto modelo = new Producto();
+	private Object [][] productos = new Object [11][4];
 	
 	/**
 	 * Constructor del controlador
 	 * @param vista Vista de tipo DetalleRefrescos
 	 * @param modelo Modelo de tipo Producto
+	 * @param productos Array de productos
 	 */
-	public CDetRef(DetalleRefrescos vista, Producto modelo) {
+	public CDetRef(DetalleRefrescos vista, Producto modelo, Object[][] productos) {
 		this.vista = vista;
 		this.modelo = modelo;
+		this.productos = productos;
 		
 		vista.onClickBtnComprar(this);
 		vista.eventoVentana(this);
@@ -49,7 +52,7 @@ public class CDetRef implements ActionListener, WindowListener {
 	@Override
 	public void windowClosing(WindowEvent e) {
 		Opciones op = new Opciones();
-		COpciones cont = new COpciones(op);
+		COpciones cont = new COpciones(op, productos);
 		op.setVisible(true);
 		vista.setVisible(false);
 	}
@@ -103,7 +106,6 @@ public class CDetRef implements ActionListener, WindowListener {
 				lbIcons = vista.getArrIcons();
 				lbPrices = vista.getArrPrices();
 				
-				Object [][] productos = new Object [11][4];
 				
 				for (int i = 0; i <= chlSelec.length-1; i++) {
 					if(chlSelec[i].isSelected()) {
@@ -120,9 +122,11 @@ public class CDetRef implements ActionListener, WindowListener {
 				}
 				if(total >= 100) {
 					vista.mostrarError("Tu compra no puede ser mayor o igual a $100");
+				}else if(total == 0){
+					vista.mostrarError("Elige al menos un producto!!");
 				}else {
 					Comprar comprar = new Comprar(productos);
-					CComprar cont = new CComprar(comprar);
+					CComprar cont = new CComprar(comprar, productos);
 					comprar.setVisible(true);
 					vista.setVisible(false);
 				}

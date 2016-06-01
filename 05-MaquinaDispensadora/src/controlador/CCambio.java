@@ -20,17 +20,20 @@ public class CCambio implements WindowListener {
 	private Cambio vista = new Cambio();
 	private RegresaCambio modelo = new RegresaCambio();
 	private int total = 0;
+	private Object [][] productos = new Object [11][4];
 	
 	/**
 	 * Constructor del controlador
 	 * @param vista Vista de tipo Cambio
 	 * @param modelo Modelo de tipo RegresaCambio
 	 * @param total Total del cambio a regresar en formato int
+	 * @param productos Array de productos
 	 */
-	public CCambio(Cambio vista, RegresaCambio modelo, int total) {
+	public CCambio(Cambio vista, RegresaCambio modelo, int total, Object [][] productos) {
 		this.vista = vista;
 		this.modelo = modelo;
 		this.total = total;
+		this.productos = productos;
 		
 		vista.eventoVentana(this);
 	}
@@ -61,7 +64,8 @@ public class CCambio implements WindowListener {
 	@Override
 	public void windowClosing(WindowEvent e) {
 		Opciones op = new Opciones();
-		COpciones cont = new COpciones(op);
+		Object [][] productos = new Object [11][4];
+		COpciones cont = new COpciones(op, productos);
 		op.setVisible(true);
 		vista.setVisible(false);
 	}

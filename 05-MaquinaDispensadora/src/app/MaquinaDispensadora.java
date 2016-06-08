@@ -31,7 +31,7 @@ public class MaquinaDispensadora {
 			
 			for (int i = inicio; i <= fin; i+=20) {
 				s.setValorBarra(i);
-				Thread.sleep(10);
+				Thread.sleep(1000);
 			}
 			Opciones vista = new Opciones();
 			COpciones controlador = new COpciones(vista);

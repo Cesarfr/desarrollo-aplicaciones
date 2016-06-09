@@ -28,7 +28,6 @@ public class CCambio implements WindowListener {
 	 * @param vista Vista de tipo Cambio
 	 * @param modelo Modelo de tipo RegresaCambio
 	 * @param total Total del cambio a regresar en formato int
-	 * @param productos ArrayList de productos
 	 */
 	public CCambio(Cambio vista, RegresaCambio modelo, int total) {
 		this.vista = vista;

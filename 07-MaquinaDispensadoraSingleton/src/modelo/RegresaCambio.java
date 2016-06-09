@@ -6,7 +6,7 @@ package modelo;
  * @version 1.0
  *
  */
-public class RegresaCambio {
+public final class RegresaCambio {
 	
 	private static final RegresaCambio rc = new RegresaCambio();
 	

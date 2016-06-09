@@ -14,7 +14,9 @@ import javax.swing.JProgressBar;
  * @version 1.0
  *
  */
-public class Screen extends JFrame {
+public final class Screen extends JFrame {
+	
+	private static final Screen s = new Screen();
 	
 	private JProgressBar barra = new JProgressBar();
 	private JLabel lbImagen = new JLabel();
@@ -23,13 +25,21 @@ public class Screen extends JFrame {
 	/**
 	 * Constructor de la vista DetalleChocolates
 	 */
-	public Screen() {
+	private Screen() {
 		super.setTitle("Screen");
 		super.setSize(320, 480);
 		super.setResizable(false);
 		super.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
 		cargarControles();
+	}
+	
+	/**
+	 * Método para retornar la instancia Screen
+	 * @return Instancia de tipo Screen
+	 */
+	public static Screen instanciaScreen(){
+		return s;
 	}
 	
 	/**

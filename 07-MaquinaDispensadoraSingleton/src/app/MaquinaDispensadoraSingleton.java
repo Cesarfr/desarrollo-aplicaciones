@@ -18,7 +18,7 @@ public class MaquinaDispensadoraSingleton {
 	 */
 	public static void main(String[] args) {
 		
-		Screen s = new Screen();
+		Screen s = Screen.instanciaScreen();
 		s.setVisible(true);
 
 		try {

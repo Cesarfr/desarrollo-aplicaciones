@@ -1,12 +1,16 @@
 package modelo;
 
 /**
- * Modelo del producto
+ * Modelo del producto (Singleton)
  * @author cesar
  * @version 1.0
  *
  */
-public class Producto {
+public final class Producto {
+	/**
+	 * Instancia de la clase de tipo static, final
+	 */
+	private static final Producto prod = new Producto();
 	
 	private String nombre = "";
 	private String descripcion = "";
@@ -16,7 +20,9 @@ public class Producto {
 	/**
 	 * Constructor por default de la clase
 	 */
-	public Producto() {}
+	private Producto() {
+		System.out.println("Producto creado");
+	}
 	
 	/**
 	 * Constructor de la clase Producto
@@ -25,11 +31,27 @@ public class Producto {
 	 * @param precio Precio del producto en formato int
 	 * @param icono Icono del producto en formato String
 	 */
-	public Producto(String nombre, String descripcion, int precio, String icono) {
+	private Producto(String nombre, String descripcion, int precio, String icono) {
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 		this.precio = precio;
 		this.icono = icono;
+	}
+	
+	/**
+	 * Método para retornar la instancia Producto
+	 * @return Instancia de tipo Producto
+	 */
+	public static Producto instanciaProducto() {
+		return prod;
+	}
+	
+	/**
+	 * Método toString para devolver los cambios en los valores de la clase
+	 */
+	@Override
+	public String toString(){
+		return String.join(",", nombre, descripcion, icono, Integer.toString(precio));
 	}
 	
 	/**

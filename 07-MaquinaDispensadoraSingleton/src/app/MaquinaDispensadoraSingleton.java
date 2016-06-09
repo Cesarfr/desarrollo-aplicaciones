@@ -10,7 +10,7 @@ import vista.Screen;
  * @version 1.0
  *
  */
-public class MaquinaDispensadora {
+public class MaquinaDispensadoraSingleton {
 	
 	/**
 	 * Método main de la aplicacion

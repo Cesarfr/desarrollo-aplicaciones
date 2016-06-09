@@ -4,6 +4,7 @@ import java.awt.Container;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowListener;
 import java.util.ArrayList;
+import java.util.StringTokenizer;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -33,7 +34,7 @@ public class Comprar extends JFrame {
 	private JTextField txtMonto = new JTextField();
 	private JButton btnPagar = new JButton("Pagar");
 	private Container c = getContentPane();
-	private ArrayList<Producto> productos = new ArrayList<Producto>();
+	private ArrayList<String> productos = new ArrayList<String>();
 	
 	/**
 	 * Constructor por default de la vista
@@ -44,7 +45,7 @@ public class Comprar extends JFrame {
 	 * Constructor de la vista Comprar
 	 * @param productos ArrayList de productos
 	 */
-	public Comprar(ArrayList<Producto> productos) {
+	public Comprar(ArrayList<String> productos) {
 		this.productos = productos;
 		
 		super.setTitle("Comprar");
@@ -72,16 +73,25 @@ public class Comprar extends JFrame {
 			JLabel texto = new JLabel();
 			JLabel precio = new JLabel();
 			
-			Producto p = new Producto();
+			String p = "";
 			
 			if(!productos.isEmpty()) {
 				
 				p = productos.get(i);
 				
-				String nombre = p.getNombre();
-				String descripcion = p.getDescripcion();
-				String ic = p.getIcono();
-				int pr = p.getPrecio();
+				StringTokenizer st = new StringTokenizer(p, ",");
+				
+				String nombre = "";
+				String descripcion = "";
+				String ic = "";
+				int pr = 0;
+				
+				while (st.hasMoreElements()) {
+					nombre = st.nextToken();
+					descripcion = st.nextToken();
+					ic = st.nextToken();
+					pr = Integer.parseInt(st.nextToken());
+				}
 				
 				lbIcono[i] = icono;
 				lbIcono[i].setBounds(10, y, 30, 30);

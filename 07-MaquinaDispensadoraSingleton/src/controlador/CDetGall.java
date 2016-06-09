@@ -23,8 +23,8 @@ import vista.Opciones;
 public class CDetGall implements ActionListener, WindowListener {
 	
 	private DetalleGalletas vista = new DetalleGalletas();
-	private Producto modelo = new Producto();
-	private ArrayList<Producto> productos = new ArrayList<Producto>();
+	private Producto modelo = Producto.instanciaProducto();
+	private ArrayList<String> productos = new ArrayList<String>();
 	
 	/**
 	 * Constructor del controlador
@@ -32,7 +32,7 @@ public class CDetGall implements ActionListener, WindowListener {
 	 * @param modelo Modelo de tipo Producto
 	 * @param productos ArrayList de productos
 	 */
-	public CDetGall(DetalleGalletas vista, Producto modelo, ArrayList<Producto> productos) {
+	public CDetGall(DetalleGalletas vista, Producto modelo, ArrayList<String> productos) {
 		this.vista = vista;
 		this.modelo = modelo;
 		this.productos = productos;
@@ -109,13 +109,12 @@ public class CDetGall implements ActionListener, WindowListener {
 				
 				for (int i = 0; i <= chlSelec.length-1; i++) {
 					if(chlSelec[i].isSelected()) {
-						Producto p = new Producto();
-						p.setNombre(chlSelec[i].getText());
-						p.setDescripcion(lbText[i].getText());
-						p.setIcono(lbIcons[i].getIcon().toString());
-						p.setPrecio(Integer.parseInt(lbPrices[i].getText()));
-						productos.add(p);
-						total += p.getPrecio();
+						modelo.setNombre(chlSelec[i].getText());
+						modelo.setDescripcion(lbText[i].getText());
+						modelo.setIcono(lbIcons[i].getIcon().toString());
+						modelo.setPrecio(Integer.parseInt(lbPrices[i].getText()));
+						productos.add(modelo.toString());
+						total += modelo.getPrecio();
 					}
 				}
 				if(total >= 100) {

@@ -8,6 +8,8 @@ package modelo;
  */
 public class RegresaCambio {
 	
+	private static final RegresaCambio rc = new RegresaCambio();
+	
 	private int total = 0;
 	private int [] monedas = {100, 50, 20, 10, 5, 1};
 	private int [] cambio;
@@ -15,14 +17,24 @@ public class RegresaCambio {
 	/**
 	 * Constructor por default de la clase
 	 */
-	public RegresaCambio() {}
+	private RegresaCambio() {
+		System.out.println("RegresaCambio creado");
+	}
 	
 	/**
 	 * Constructor de la clase RegresaCambio
 	 * @param total
 	 */
-	public RegresaCambio(int total) {
+	private RegresaCambio(int total) {
 		this.total = total;
+	}
+	
+	/**
+	 * Método para retornar la instancia RegresaCambio
+	 * @return Instancia de tipo RegresaCambio
+	 */
+	public static RegresaCambio instanciaRC() {
+		return rc;
 	}
 	
 	/**

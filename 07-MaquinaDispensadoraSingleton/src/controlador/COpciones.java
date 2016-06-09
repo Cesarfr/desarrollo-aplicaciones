@@ -23,7 +23,7 @@ import vista.Opciones;
 public class COpciones implements ActionListener, WindowListener{
 	
 	private Opciones vista = new Opciones();
-	private ArrayList<Producto> productos = new ArrayList<Producto>();
+	private ArrayList<String> productos = new ArrayList<String>();
 	
 	/**
 	 * Constructor de la clase COpciones
@@ -44,7 +44,7 @@ public class COpciones implements ActionListener, WindowListener{
 	 * @param vista Vista de tipo Opciones
 	 * @param productos ArrayList de productos
 	 */
-	public COpciones(Opciones vista, ArrayList<Producto> productos) {
+	public COpciones(Opciones vista, ArrayList<String> productos) {
 		this.vista = vista;
 		this.productos = productos;
 		
@@ -105,25 +105,25 @@ public class COpciones implements ActionListener, WindowListener{
 		try {
 			if(e.getSource() == vista.getBtnChocolates()) {
 				DetalleChocolates dtc = new DetalleChocolates();
-				Producto modelo = new Producto();
+				Producto modelo = Producto.instanciaProducto();
 				CDetChoco cont = new CDetChoco(dtc, modelo, productos);
 				dtc.setVisible(true);
 				vista.setVisible(false);
 			}else if(e.getSource() == vista.getBtnDulces()) {
 				DetalleDulces dtd = new DetalleDulces();
-				Producto modelo = new Producto();
+				Producto modelo = Producto.instanciaProducto();
 				CDetDul cont = new CDetDul(dtd, modelo, productos);
 				dtd.setVisible(true);
 				vista.setVisible(false);
 			}else if(e.getSource() == vista.getBtnGalletas()) {
 				DetalleGalletas dtg = new DetalleGalletas();
-				Producto modelo = new Producto();
+				Producto modelo = Producto.instanciaProducto();
 				CDetGall cont = new CDetGall(dtg, modelo, productos);
 				dtg.setVisible(true);
 				vista.setVisible(false);
 			}else if(e.getSource() == vista.getBtnRefrescos()) {
 				DetalleRefrescos dtr = new DetalleRefrescos();
-				Producto modelo = new Producto();
+				Producto modelo = Producto.instanciaProducto();
 				CDetRef cont = new CDetRef(dtr, modelo, productos);
 				dtr.setVisible(true);
 				vista.setVisible(false);

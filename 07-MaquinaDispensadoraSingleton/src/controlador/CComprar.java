@@ -21,14 +21,14 @@ import vista.Opciones;
 public class CComprar implements ActionListener, WindowListener {
 	
 	private Comprar vista = new Comprar();
-	private ArrayList<Producto> productos = new ArrayList<Producto>();
+	private ArrayList<String> productos = new ArrayList<String>();
 	
 	/**
 	 * Constructor del controlador
 	 * @param vista Vista de tipo Comprar
 	 * @param productos ArrayList de productos
 	 */
-	public CComprar(Comprar vista, ArrayList<Producto> productos) {
+	public CComprar(Comprar vista, ArrayList<String> productos) {
 		this.vista = vista;
 		this.productos = productos;
 		vista.onClickBtnComprar(this);
@@ -97,8 +97,8 @@ public class CComprar implements ActionListener, WindowListener {
 				}else {
 					total = vista.getMonto() - vista.getTotal();
 					Cambio cm = new Cambio();
-					RegresaCambio modelo = new RegresaCambio();
-					CCambio control = new CCambio(cm, modelo, total, productos);
+					RegresaCambio modelo = RegresaCambio.instanciaRC();
+					CCambio control = new CCambio(cm, modelo, total);
 					cm.setVisible(true);
 					vista.setVisible(false);
 				}

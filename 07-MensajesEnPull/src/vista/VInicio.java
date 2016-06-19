@@ -33,7 +33,7 @@ public class VInicio extends JFrame {
 	 */
 	public VInicio() {
 		super.setTitle("Inicio");
-		super.setSize(320, 280);
+		super.setSize(320, 300);
 		super.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		super.setResizable(false);
 		super.setLocationRelativeTo(null);

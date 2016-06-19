@@ -9,12 +9,24 @@ import java.sql.Connection;
 import modelo.ConexionBD;
 import modelo.Usuario;
 import vista.VCrearCuenta;
+import vista.VInicio;
 
+/**
+ * Controlador de la vista VCrearCuenta
+ * @author cesar
+ * @version 1.0
+ *
+ */
 public class CCrearCuenta implements ActionListener, WindowListener {
 	
 	private VCrearCuenta vista = new VCrearCuenta();
 	private Usuario modelo = new Usuario();
 	
+	/**
+	 * Constructor de la clase
+	 * @param vista Vista de tipo VCrearCuenta
+	 * @param modelo Modelo de tipo Usuario
+	 */
 	public CCrearCuenta(VCrearCuenta vista, Usuario modelo) {
 		this.vista = vista;
 		this.modelo = modelo;
@@ -33,7 +45,13 @@ public class CCrearCuenta implements ActionListener, WindowListener {
 	 * Metodo para realizar acciones al intentar cerrar la ventana
 	 */
 	@Override
-	public void windowClosing(WindowEvent e) {}
+	public void windowClosing(WindowEvent e) {
+		VInicio v = new VInicio();
+		Usuario u = new Usuario();
+		CInicio c = new CInicio(v, u);
+		v.setVisible(true);
+		vista.setVisible(false);
+	}
 	
 	/**
 	 * Metodo par realizar acciones al cerrar la ventana

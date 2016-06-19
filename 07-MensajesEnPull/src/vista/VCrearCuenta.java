@@ -40,7 +40,7 @@ public class VCrearCuenta extends JFrame {
 	 */
 	public VCrearCuenta() {
 		super.setTitle("Crear Cuenta");
-		super.setSize(320, 330);
+		super.setSize(320, 350);
 		super.setResizable(false);
 		super.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		super.setLocationRelativeTo(null);

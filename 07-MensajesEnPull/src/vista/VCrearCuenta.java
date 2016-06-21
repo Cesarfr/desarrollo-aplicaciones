@@ -27,8 +27,8 @@ public class VCrearCuenta extends JFrame {
 	private JTextField txtApPat = new JTextField();
 	private JLabel lbApMat = new JLabel("Ap. Materno:");
 	private JTextField txtApMat = new JTextField();
-	private JLabel lbUser = new JLabel("Usuario:");
-	private JTextField txtUser = new JTextField();
+	private JLabel lbEmail = new JLabel("Email:");
+	private JTextField txtEmail = new JTextField();
 	private JLabel lbPasswd = new JLabel("Contraseña:");
 	private JPasswordField txtPasswd = new JPasswordField();
 	private JButton btnCrearCuenta = new JButton("Crear cuenta");
@@ -59,10 +59,10 @@ public class VCrearCuenta extends JFrame {
 		txtNombre.setBounds(120, 60, 180, 30);
 		lbApPat.setBounds(10, 100, 90, 30);
 		txtApPat.setBounds(120, 100, 180, 30);
-		lbApMat.setBounds(10, 140, 90, 30);
+		lbApMat.setBounds(10, 140, 95, 30);
 		txtApMat.setBounds(120, 140, 180, 30);
-		lbUser.setBounds(10, 180, 90, 30);
-		txtUser.setBounds(120, 180, 180, 30);
+		lbEmail.setBounds(10, 180, 90, 30);
+		txtEmail.setBounds(120, 180, 180, 30);
 		lbPasswd.setBounds(10, 220, 90, 30);
 		txtPasswd.setBounds(120, 220, 180, 30);
 		btnCrearCuenta.setBounds(20, 260, 280, 50);
@@ -74,8 +74,8 @@ public class VCrearCuenta extends JFrame {
 		c.add(txtApPat);
 		c.add(lbApMat);
 		c.add(txtApMat);
-		c.add(lbUser);
-		c.add(txtUser);
+		c.add(lbEmail);
+		c.add(txtEmail);
 		c.add(lbPasswd);
 		c.add(txtPasswd);
 		c.add(btnCrearCuenta);
@@ -106,11 +106,11 @@ public class VCrearCuenta extends JFrame {
 	}
 	
 	/**
-	 * Método para obtener el valor de la caja usuario
-	 * @return Cadena de texto del usuario
+	 * Método para obtener el valor de la caja email
+	 * @return Cadena de texto del email
 	 */
-	public String getUser() {
-		return txtUser.getText();
+	public String getEmail() {
+		return txtEmail.getText();
 	}
 	
 	/**
@@ -152,7 +152,7 @@ public class VCrearCuenta extends JFrame {
 		txtNombre.setText(null);
 		txtApMat.setText(null);
 		txtApPat.setText(null);
-		txtUser.setText(null);
+		txtEmail.setText(null);
 		txtPasswd.setText(null);
 	}
 	

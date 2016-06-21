@@ -17,7 +17,7 @@ public class Usuario {
 	private String nombre = null;
 	private String apPat = null;
 	private String apMat = null;
-	private String user = null;
+	private String email = null;
 	private String passwd = null;
 	
 	private PreparedStatement pstmt = null;
@@ -93,19 +93,19 @@ public class Usuario {
 	}
 	
 	/**
-	 * Método para obtener el username del usuario
-	 * @return Username en formato String
+	 * Método para obtener el emailname del usuario
+	 * @return emailname en formato String
 	 */
-	public String getUser() {
-		return user;
+	public String getEmail() {
+		return email;
 	}
 	
 	/**
-	 * Método para establecer el username del usuario
-	 * @param user Username en formato String
+	 * Método para establecer el email del usuario
+	 * @param email email en formato String
 	 */
-	public void setUser(String user) {
-		this.user = user;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	
 	/**
@@ -130,46 +130,44 @@ public class Usuario {
 	 * @param nombre Nombre del usuario en formato String
 	 * @param apPat Apellido paterno del usuario en formato String
 	 * @param apMat Apellido materno del usuario en formato String
-	 * @param user Username en formato String
+	 * @param email email en formato String
 	 * @param passwd Password del ususario en formato String
 	 * @return Variable de control en formato int
 	 */
-	public int guardaUsuario(Connection conn, String nombre, String apPat, String apMat, String user, String passwd) {
+	public int guardaUsuario(Connection conn, String nombre, String apPat, String apMat, String email, String passwd) {
 
 		int ok = 0;
 		try {
-			String sqli = "INSERT INTO usuario (nombre, apPat, apMat, user, passwd) VALUES(?,?,?,?,?)";
+			String sqli = "INSERT INTO usuario (nombre, apPat, apMat, email, passwd) VALUES(?,?,?,?,?)";
 			pstmt = conn.prepareStatement(sqli);
 			pstmt.setString(1, nombre);
 			pstmt.setString(2, apPat);
 			pstmt.setString(3, apMat);
-			pstmt.setString(4, user);
+			pstmt.setString(4, email);
 			pstmt.setString(5, passwd);
 			pstmt.executeUpdate();
 			ok = 1;
 		} catch (SQLException e) {
-			e.printStackTrace();
-			ok = 0;
+			ok = 2;
 		}
 		return ok;
 	}
 	
 	/**
-	 * Método para buscar un usuario por username y password
+	 * Método para buscar un usuario por emailname y password
 	 * @param conn Conexion a la base de datos
-	 * @param user Username del usuario en formato String
+	 * @param email emailname del usuario en formato String
 	 * @param passwd Password del usuario en formato String
 	 * @return Objeto de tipo ResultSet
 	 */
-	public ResultSet regresaUsuario(Connection conn, String user, String passwd) {
+	public ResultSet regresaUsuario(Connection conn, String email, String passwd) {
 		try {
-			String sql = "SELECT id, nombre, apPat, apMat FROM usuario WHERE user=? AND passwd=?";
+			String sql = "SELECT id, nombre, apPat, apMat FROM usuario WHERE email=? AND passwd=?";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, user);
+			pstmt.setString(1, email);
 			pstmt.setString(2, passwd);
 			rs = pstmt.executeQuery();
 		} catch (SQLException e) {
-			e.printStackTrace();
 			rs = null;
 		}
 		return rs;
@@ -188,7 +186,6 @@ public class Usuario {
 			pstmt.setInt(1, id);
 			rs = pstmt.executeQuery();
 		} catch (SQLException e) {
-			e.printStackTrace();
 			rs = null;
 		}
 		return rs;

@@ -108,7 +108,6 @@ public class Mensaje {
 			pstmt.executeUpdate();
 			ok = 1;
 		} catch (SQLException e) {
-			e.printStackTrace();
 			ok = 0;
 		}
 		return ok;

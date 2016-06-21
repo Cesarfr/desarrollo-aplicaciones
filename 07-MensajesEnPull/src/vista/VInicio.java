@@ -20,8 +20,8 @@ public class VInicio extends JFrame {
 	
 	private JLabel lbMensaje = new JLabel("<html><h2>Bienvenido al \"Mensajito\"</h2></html>");
 	private JLabel lbInicio = new JLabel("INICIAR SESIÓN");
-	private JLabel lbUser = new JLabel("Usuario:");
-	private JTextField txtUser = new JTextField();
+	private JLabel lbEmail = new JLabel("Email:");
+	private JTextField txtEmail = new JTextField();
 	private JLabel lbPasswd = new JLabel("Contraseña:");
 	private JPasswordField txtPasswd = new JPasswordField();
 	private JButton btnAcceder = new JButton("Acceder");
@@ -49,8 +49,8 @@ public class VInicio extends JFrame {
 		
 		lbMensaje.setBounds(30, 10, 300, 30);
 		lbInicio.setBounds(100, 50, 160, 30);
-		lbUser.setBounds(20, 90, 100, 30);
-		txtUser.setBounds(120, 90, 180, 30);
+		lbEmail.setBounds(20, 90, 100, 30);
+		txtEmail.setBounds(120, 90, 180, 30);
 		lbPasswd.setBounds(20, 130, 100, 30);
 		txtPasswd.setBounds(120, 130, 180, 30);
 		btnAcceder.setBounds(20, 170, 280, 50);
@@ -58,8 +58,8 @@ public class VInicio extends JFrame {
 		
 		c.add(lbMensaje);
 		c.add(lbInicio);
-		c.add(lbUser);
-		c.add(txtUser);
+		c.add(lbEmail);
+		c.add(txtEmail);
 		c.add(lbPasswd);
 		c.add(txtPasswd);
 		c.add(btnAcceder);
@@ -71,8 +71,8 @@ public class VInicio extends JFrame {
 	 * Método para obtener el valor de la caja usuario
 	 * @return Cadena de texto del usuario
 	 */
-	public String getUser() {
-		return txtUser.getText();
+	public String getEmail() {
+		return txtEmail.getText();
 	}
 	
 	/**
@@ -119,7 +119,7 @@ public class VInicio extends JFrame {
 	 * Método para limpiar las cajas de texto de la aplicación
 	 */
 	public void limpiarCajas() {
-		txtUser.setText(null);
+		txtEmail.setText(null);
 		txtPasswd.setText(null);
 	}
 	

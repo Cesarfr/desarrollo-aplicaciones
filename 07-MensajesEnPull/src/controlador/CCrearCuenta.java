@@ -8,6 +8,7 @@ import java.sql.Connection;
 
 import modelo.ConexionBD;
 import modelo.Usuario;
+import modelo.ValidarEmail;
 import vista.VCrearCuenta;
 import vista.VInicio;
 
@@ -92,17 +93,18 @@ public class CCrearCuenta implements ActionListener, WindowListener {
 			String nombre = null;
 			String apPat = null;
 			String apMat = null;
-			String user = null;
+			String email = null;
 			String passwd = null;
 			
 			if(e.getSource() == vista.getBtnCrearCuenta()) {
 				nombre = vista.getNombre();
 				apPat = vista.getApPat();
 				apMat = vista.getApMat();
-				user = vista.getUser();
+				email = vista.getEmail();
 				passwd = vista.getPasswd();
 
 				Connection cdb = ConexionBD.getConexion().getConnSQLite();
+				ValidarEmail ve = new ValidarEmail();
 				
 				if(nombre.equals("") || nombre.equals(null)){
 					vista.mostrarMensaje("Escribe un nombre para la cuenta!!");
@@ -110,15 +112,19 @@ public class CCrearCuenta implements ActionListener, WindowListener {
 					vista.mostrarMensaje("Escribe un apellido paterno para la cuenta!!");
 				} else if(apMat.equals("") || apMat.equals(null)){
 					vista.mostrarMensaje("Escribe un apellido materno para la cuenta!!");
-				} else if(user.equals("") || user.equals(null)){
-					vista.mostrarMensaje("Escribe un usuario para la cuenta!!");
+				} else if(email.equals("") || email.equals(null)){
+					vista.mostrarMensaje("Escribe un email para la cuenta!!");
+				} else if(ve.validate(email) == false){
+					vista.mostrarMensaje("Escribe un email valido!!");
 				} else if(passwd.equals("") || passwd.equals(null)){
 					vista.mostrarMensaje("Escribe una contraseña para la cuenta!!");
 				} else {
-					int i = modelo.guardaUsuario(cdb, nombre, apPat, apMat, user, passwd);
+					int i = modelo.guardaUsuario(cdb, nombre, apPat, apMat, email, passwd);
 					if (i == 1) {
-						vista.mostrarMensaje("Usuario guardado con éxito!!");
+						vista.mostrarMensaje("Usuario guardado con éxito!! \nAhora puedes iniciar sesión :)");
 						vista.limpiarCajas();
+					} else if(i == 2) {
+						vista.mostrarError("El email escrito ya esta en uso, elige otro !");
 					} else {
 						vista.mostrarError("Ha ocurrido un error al guardar!!");
 					}

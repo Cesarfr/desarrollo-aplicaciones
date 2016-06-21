@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import modelo.ConexionBD;
 import modelo.Mensaje;
 import modelo.Usuario;
+import modelo.ValidarEmail;
 import vista.VAgregarMensaje;
 import vista.VCrearCuenta;
 import vista.VInicio;
@@ -47,41 +48,45 @@ public class CInicio implements ActionListener {
 		try {
 
 			Connection cdb = ConexionBD.getConexion().getConnSQLite();
+			ValidarEmail ve = new ValidarEmail();
 			
 			if(e.getSource() == vista.getBtnAcceder()) {
 				
-				String usuario = vista.getUser();
+				String email = vista.getEmail();
 				String passwd = vista.getPasswd();
-				
-				int id = 0;
-				String nombre = null;
-				String apPat = null;
-				String apMat = null;
-				
-				rs = modelo.regresaUsuario(cdb, usuario, passwd);
-				while(rs.next()) {
-					id = rs.getInt(1);
-					nombre = rs.getString(2);
-					apPat = rs.getString(3);
-					apMat = rs.getString(4);
-				}
-				
-				if(id != 0){
-					VAgregarMensaje v = new VAgregarMensaje();
-					Mensaje m = new Mensaje();
-					CAgregarMensaje ca = new CAgregarMensaje(v, m);
-					
-					arrMens = m.getMensajes(cdb);
-					for (int i = 0; i < arrMens.size(); i++) {
-						v.getTaMensajes().append(arrMens.get(i));
-					}
-					v.getLbNombre().setText(String.format("Bienvenido: %s %s %s", nombre, apPat, apMat));
-					v.getLbID().setText(Integer.toString(id));
-					v.setVisible(true);
-					vista.setVisible(false);
+				if(ve.validate(email) == false) {
+					vista.mostrarError("Escribe un email valido !");
 				}else {
-					vista.mostrarError("El usuario o la contraseña son erroneos");
-					vista.limpiarCajas();
+					int id = 0;
+					String nombre = null;
+					String apPat = null;
+					String apMat = null;
+					
+					rs = modelo.regresaUsuario(cdb, email, passwd);
+					while(rs.next()) {
+						id = rs.getInt(1);
+						nombre = rs.getString(2);
+						apPat = rs.getString(3);
+						apMat = rs.getString(4);
+					}
+					
+					if(id != 0){
+						VAgregarMensaje v = new VAgregarMensaje();
+						Mensaje m = new Mensaje();
+						CAgregarMensaje ca = new CAgregarMensaje(v, m);
+						
+						arrMens = m.getMensajes(cdb);
+						for (int i = 0; i < arrMens.size(); i++) {
+							v.getTaMensajes().append(arrMens.get(i));
+						}
+						v.getLbNombre().setText(String.format("Bienvenido: %s %s %s", nombre, apPat, apMat));
+						v.getLbID().setText(Integer.toString(id));
+						v.setVisible(true);
+						vista.setVisible(false);
+					}else {
+						vista.mostrarError("El email o la contraseña son erroneos");
+						vista.limpiarCajas();
+					}
 				}
 			}else if(e.getSource() == vista.getBtnCrearCuenta()) {
 				VCrearCuenta vc = new VCrearCuenta();
